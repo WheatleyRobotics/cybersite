@@ -66,11 +66,11 @@ export default function Achievements() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-gradient-to-b from-gray-900/80 to-black/80 border border-red-500/20 rounded-lg p-6 hover:border-red-500/40 transition-all duration-300 group hover:shadow-2xl hover:shadow-red-500/20"
+              className="bg-gradient-to-b from-gray-900/80 to-black/80 border border-red-500/20 rounded-lg p-6 hover:border-red-500/40 group hover:shadow-2xl hover:shadow-red-500/20"
             >
               {/* Icon */}
               <div className="flex items-center justify-between mb-4">
-                <achievement.icon className="w-8 h-8 text-red-500 group-hover:scale-110 transition-transform duration-300" />
+                <achievement.icon className="w-8 h-8 text-red-500" />
               </div>
 
               {/* Year Badge */}
@@ -79,7 +79,7 @@ export default function Achievements() {
               </div>
 
               {/* Title and Event */}
-              <h3 className="text-white font-bold text-lg mb-2 font-mono group-hover:text-red-500 transition-colors duration-300">
+              <h3 className="text-white font-bold text-lg mb-2 font-mono group-hover:text-red-500">
                 {achievement.title}
               </h3>
               <h4 className="text-gray-400 font-mono text-sm mb-3 uppercase tracking-wider">
@@ -92,7 +92,7 @@ export default function Achievements() {
               </p>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-lg pointer-events-none" />
             </motion.div>
           ))}
         </div>

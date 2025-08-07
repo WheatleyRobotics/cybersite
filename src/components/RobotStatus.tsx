@@ -33,7 +33,7 @@ function StatusBar({ status, color, position }: { status: number; color: string;
         </div>
         <div className="w-full bg-gray-700 rounded-full h-2">
           <div
-            className="h-2 rounded-full transition-all duration-300"
+            className="h-2 rounded-full"
             style={{
               width: `${status}%`,
               backgroundColor: color,
@@ -86,7 +86,7 @@ function ComponentLabel({ component, position, isHovered }: {
           </div>
           <div className="w-full bg-gray-700 rounded-full h-1.5">
             <div
-              className="h-1.5 rounded-full transition-all duration-300"
+              className="h-1.5 rounded-full"
               style={{
                 width: `${component.status}%`,
                 backgroundColor: component.color,
@@ -412,7 +412,7 @@ export default function RobotStatus() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`border rounded-lg p-4 transition-all duration-300 cursor-pointer ${
+                className={`border rounded-lg p-4 cursor-pointer ${
                   hoveredComponent === component.name 
                     ? 'bg-black/70 border-red-500 shadow-lg' 
                     : 'bg-gray-900/50 border-gray-700 hover:border-gray-600'

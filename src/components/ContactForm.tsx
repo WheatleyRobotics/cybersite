@@ -270,8 +270,8 @@ export default function ContactForm() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   className={`flex items-center space-x-2 px-8 py-3 font-mono font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
                     isSubmitting
                       ? 'bg-gray-600 text-gray-400 cursor-not-allowed'

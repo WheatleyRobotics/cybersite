@@ -160,9 +160,9 @@ export default function CompetitionCalendar() {
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
@@ -176,9 +176,9 @@ export default function CompetitionCalendar() {
 
         {/* Filter Tabs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
           className="flex justify-center mb-12"
         >
           <div className="flex space-x-1 bg-gray-900/50 border border-red-500/20 rounded-lg p-1">
@@ -190,13 +190,13 @@ export default function CompetitionCalendar() {
               <motion.button
                 key={tab.key}
                 onClick={() => setSelectedView(tab.key as 'upcoming' | 'completed' | 'all')}
-                className={`px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-mono text-sm ${
                   selectedView === tab.key
                     ? 'bg-red-500 text-black font-bold'
                     : 'text-gray-400 hover:text-white hover:bg-gray-800'
                 }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
               >
                 {tab.label}
               </motion.button>
@@ -221,7 +221,7 @@ export default function CompetitionCalendar() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} transition-all duration-300 hover:shadow-2xl`}
+                className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} hover:shadow-2xl`}
               >
                 {/* Event Type Badge */}
                 <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono mb-4 ${config.bgColor} ${config.color} border ${config.borderColor}`}>
@@ -230,7 +230,7 @@ export default function CompetitionCalendar() {
                 </div>
 
                 {/* Event Title */}
-                <h3 className={`text-xl font-bold font-mono mb-3 group-hover:${config.color} transition-colors duration-300`}>
+                <h3 className={`text-xl font-bold font-mono mb-3 group-hover:${config.color}`}>
                   {event.name}
                 </h3>
 

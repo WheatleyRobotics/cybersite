@@ -5,65 +5,79 @@ import { Building2, Award, Handshake } from 'lucide-react'
 
 interface Sponsor {
   name: string
-  tier: 'platinum' | 'gold' | 'silver' | 'bronze'
+  tier: 'diamond' | 'gold' | 'silver' | 'bronze'
   website: string
   contribution: string
   description: string
+  since: number
+  sponsorType: 'Corporate Sponsor' | 'Business Sponsor' | 'Family Sponsor' | 'Partner'
 }
 
 const sponsors: Sponsor[] = [
   {
     name: 'Boeing',
-    tier: 'platinum',
+    tier: 'diamond',
     website: 'https://boeing.com',
     contribution: 'Primary Aerospace Sponsor',
-    description: 'Global aerospace leader providing engineering expertise, funding, and mentorship from industry professionals.'
+    description: 'Global aerospace leader providing engineering expertise, funding, and mentorship from industry professionals.',
+    since: 2018,
+    sponsorType: 'Corporate Sponsor'
   },
   {
     name: 'ORICS Industries',
-    tier: 'platinum',
+    tier: 'diamond',
     website: 'https://oricsindustries.com',
     contribution: 'Manufacturing & Design',
-    description: 'Advanced manufacturing solutions and precision engineering support for competitive robotics.'
+    description: 'Advanced manufacturing solutions and precision engineering support for competitive robotics.',
+    since: 2020,
+    sponsorType: 'Corporate Sponsor'
   },
   {
     name: 'Wheatley School',
     tier: 'gold',
     website: 'https://wheatleyschool.org',
     contribution: 'Educational Partner',
-    description: 'Our home school providing facilities, resources, and educational support for STEM programs.'
+    description: 'Our home school providing facilities, resources, and educational support for STEM programs.',
+    since: 2009,
+    sponsorType: 'Partner'
   },
   {
     name: 'nVent',
     tier: 'gold',
     website: 'https://nvent.com',
     contribution: 'Innovation Sponsor',
-    description: 'Electrical solutions company supporting our Innovation in Control Award achievements.'
+    description: 'Electrical solutions company supporting our Innovation in Control Award achievements.',
+    since: 2019,
+    sponsorType: 'Corporate Sponsor'
   },
   {
     name: 'General Motors',
     tier: 'silver',
     website: 'https://gm.com',
     contribution: 'Industrial Design',
-    description: 'Automotive industry leader supporting industrial design and manufacturing excellence.'
+    description: 'Automotive industry leader supporting industrial design and manufacturing excellence.',
+    since: 2021,
+    sponsorType: 'Corporate Sponsor'
   },
   {
     name: 'Local Community Partners',
     tier: 'bronze',
     website: '#',
     contribution: 'Community Support',
-    description: 'Long Island community businesses and families supporting our robotics journey.'
+    description: 'Long Island community businesses and families supporting our robotics journey.',
+    since: 2009,
+    sponsorType: 'Family Sponsor'
   }
 ]
 
 const tierConfig = {
-  platinum: {
-    color: 'from-gray-300 to-white',
-    textColor: 'text-gray-300',
-    borderColor: 'border-gray-300/40',
-    bgColor: 'bg-gray-300/10',
+  diamond: {
+    color: 'from-teal-400 to-teal-300',
+    textColor: 'text-teal-400',
+    borderColor: 'border-teal-400/40',
+    bgColor: 'bg-teal-400/10',
     icon: Award,
-    title: 'Platinum Partners'
+    title: 'Diamond Partners'
   },
   gold: {
     color: 'from-yellow-400 to-yellow-500',
@@ -74,10 +88,10 @@ const tierConfig = {
     title: 'Gold Partners'
   },
   silver: {
-    color: 'from-gray-300 to-gray-400',
-    textColor: 'text-gray-300',
-    borderColor: 'border-gray-300/40',
-    bgColor: 'bg-gray-300/10',
+    color: 'from-gray-400 to-gray-500',
+    textColor: 'text-gray-400',
+    borderColor: 'border-gray-400/40',
+    bgColor: 'bg-gray-400/10',
     icon: Handshake,
     title: 'Silver Partners'
   },
@@ -128,9 +142,9 @@ export default function Sponsors() {
             return (
               <motion.div
                 key={tierKey}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: tierIndex * 0.2 }}
+                transition={{ duration: 0.4, delay: tierIndex * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 {/* Tier Header */}
                 <div className="flex items-center justify-center mb-12">
@@ -143,23 +157,24 @@ export default function Sponsors() {
                 </div>
 
                 {/* Sponsor Grid */}
-                <div className={`grid gap-8 ${
-                  tierKey === 'platinum' ? 'grid-cols-1 max-w-2xl mx-auto' :
-                  tierKey === 'gold' ? 'md:grid-cols-2 max-w-4xl mx-auto' :
-                  'md:grid-cols-2 lg:grid-cols-3'
+                <div className={`grid gap-8 max-w-6xl mx-auto ${
+                  tierKey === 'diamond' ? 'grid-cols-1 md:grid-cols-2' :
+                  tierKey === 'gold' ? 'grid-cols-1 md:grid-cols-2' :
+                  tierKey === 'silver' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
+                  'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
                 }`}>
                   {tierSponsors.map((sponsor, index) => (
                     <motion.div
                       key={sponsor.name}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className={`group relative bg-gradient-to-b from-gray-900/50 to-black/50 border ${config.borderColor} rounded-lg p-8 hover:${config.bgColor} transition-all duration-300 hover:shadow-2xl`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: index * 0.1 }}
+                      className={`group relative bg-gradient-to-b from-gray-900/50 to-black/50 border ${config.borderColor} rounded-lg p-8 hover:${config.bgColor} hover:shadow-2xl min-h-[400px] flex flex-col`}
                       style={{
                         boxShadow: `0 0 0 0 ${config.color}`
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.boxShadow = `0 0 30px 5px ${tierKey === 'platinum' ? '#ffffff20' : tierKey === 'gold' ? '#fbbf2420' : tierKey === 'silver' ? '#d1d5db20' : '#ea580c20'}`
+                        e.currentTarget.style.boxShadow = `0 0 20px 3px ${tierKey === 'diamond' ? '#14b8a620' : tierKey === 'gold' ? '#fbbf2420' : tierKey === 'silver' ? '#d1d5db20' : '#ea580c20'}`
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.boxShadow = '0 0 0 0 transparent'
@@ -168,14 +183,14 @@ export default function Sponsors() {
                       {/* Sponsor Visual */}
                       <div className={`w-full h-24 mb-6 rounded-lg ${config.bgColor} border ${config.borderColor} flex items-center justify-center`}>
                         <div className={`text-center ${config.textColor}`}>
-                          <Building2 className="w-10 h-10 mx-auto mb-2" />
-                          <div className="font-mono text-xs font-bold">{sponsor.name}</div>
+                          <Building2 className="w-10 h-10 mx-auto mb-1" />
+                          <div className="font-mono text-xs font-bold uppercase tracking-wide leading-tight">{sponsor.sponsorType}</div>
                         </div>
                       </div>
 
                       {/* Sponsor Info */}
                       <div className="text-center mb-6">
-                        <h4 className={`text-xl font-bold font-mono mb-2 group-hover:${config.textColor} transition-colors duration-300`}>
+                        <h4 className={`text-xl font-bold font-mono mb-2 group-hover:${config.textColor}`}>
                           {sponsor.name}
                         </h4>
                         <div className={`inline-block px-3 py-1 rounded-full text-xs font-mono ${config.bgColor} ${config.textColor} border ${config.borderColor}`}>
@@ -184,27 +199,32 @@ export default function Sponsors() {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-400 text-sm leading-relaxed text-center mb-6">
+                      <p className="text-gray-400 text-sm leading-relaxed text-center mb-4">
                         {sponsor.description}
                       </p>
+                      
+                      {/* Since Year */}
+                      <div className="text-center mb-6">
+                        <span className={`text-xs font-mono ${config.textColor} opacity-75`}>
+                          Partner since {sponsor.since}
+                        </span>
+                      </div>
 
                       {/* Visit Website Button */}
-                      <div className="text-center">
+                      <div className="text-center mt-auto">
                         <motion.a
                           href={sponsor.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center space-x-2 px-4 py-2 border ${config.borderColor} rounded-lg ${config.textColor} hover:${config.bgColor} transition-all duration-300 text-sm font-mono`}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
+                          className={`inline-flex items-center space-x-2 px-4 py-2 border ${config.borderColor} rounded-lg ${config.textColor} hover:${config.bgColor} text-sm font-mono`}
+                          whileHover={{ y: -2 }}
+                          whileTap={{ y: 0 }}
                         >
                           <span>Visit Website</span>
                           <Building2 className="w-4 h-4" />
                         </motion.a>
                       </div>
 
-                      {/* Tier Badge */}
-                      <div className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r ${config.color}`} />
                     </motion.div>
                   ))}
                 </div>
@@ -215,9 +235,9 @@ export default function Sponsors() {
 
         {/* Become a Sponsor CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-20 text-center"
         >
           <div className="bg-gradient-to-r from-red-500/10 to-gray-900/50 border border-red-500/20 rounded-lg p-12">
@@ -227,9 +247,9 @@ export default function Sponsors() {
               Multiple sponsorship tiers available with various benefits and recognition levels.
             </p>
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 transition-colors rounded-lg"
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
+              className="px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
             >
               Sponsorship Opportunities
             </motion.button>
@@ -238,9 +258,9 @@ export default function Sponsors() {
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           <div>

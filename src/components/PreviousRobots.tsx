@@ -3,6 +3,11 @@
 import { motion } from 'framer-motion'
 import { Wrench, Award, ChevronRight } from 'lucide-react'
 
+interface RobotSponsor {
+  name: string
+  tier: 'diamond' | 'gold' | 'silver' | 'bronze'
+}
+
 interface Robot {
   year: string
   name: string
@@ -10,6 +15,14 @@ interface Robot {
   description: string
   achievements: string[]
   keyFeatures: string[]
+  sponsors: RobotSponsor[]
+}
+
+const tierColors = {
+  diamond: 'text-teal-400 border-teal-400/30 bg-teal-400/10',
+  gold: 'text-yellow-400 border-yellow-400/30 bg-yellow-400/10',
+  silver: 'text-gray-400 border-gray-400/30 bg-gray-400/10',
+  bronze: 'text-orange-500 border-orange-500/30 bg-orange-500/10'
 }
 
 const previousRobots: Robot[] = [
@@ -19,7 +32,13 @@ const previousRobots: Robot[] = [
     game: 'REEFSCAPE',
     description: 'Advanced swerve drive robot designed for consistent coral and algae scoring capabilities.',
     achievements: ['Second Alliance', 'Innovation in Control'],
-    keyFeatures: ['Swerve Drive', 'Vision-Guided Line-up', 'Funnel Intake', 'Precision Climbing']
+    keyFeatures: ['Swerve Drive', 'Vision-Guided Line-up', 'Funnel Intake', 'Precision Climbing'],
+    sponsors: [
+      { name: 'Boeing', tier: 'diamond' },
+      { name: 'ORICS Industries', tier: 'diamond' },
+      { name: 'Wheatley School', tier: 'gold' },
+      { name: 'nVent', tier: 'gold' }
+    ]
   },
   {
     year: '2024',
@@ -27,7 +46,13 @@ const previousRobots: Robot[] = [
     game: 'CRESCENDO',
     description: 'Advanced swerve drive robot designed for precision note scoring and climbing capabilities.',
     achievements: ['Regional Qualifier'],
-    keyFeatures: ['Swerve Drive', 'Vision-Guided Shooting', 'Automated Intake', 'Precision Climbing']
+    keyFeatures: ['Swerve Drive', 'Vision-Guided Shooting', 'Automated Intake', 'Precision Climbing'],
+    sponsors: [
+      { name: 'ORICS Industries', tier: 'diamond' },
+      { name: 'Wheatley School', tier: 'gold' },
+      { name: 'General Motors', tier: 'silver' },
+      { name: 'Local Partners', tier: 'bronze' }
+    ]
   },
   {
     year: '2023',
@@ -35,7 +60,13 @@ const previousRobots: Robot[] = [
     game: 'CHARGED UP',
     description: 'High-scoring robot with advanced cube and cone manipulation for the CHARGED UP game.',
     achievements: ['Regional Finalists', 'Quality Award'],
-    keyFeatures: ['Virtual Four Bar', 'Solenoid End Effector', 'Auto-Balance', '6 Falcon Tank Drive']
+    keyFeatures: ['Virtual Four Bar', 'Solenoid End Effector', 'Auto-Balance', '6 Falcon Tank Drive'],
+    sponsors: [
+      { name: 'nVent', tier: 'gold' },
+      { name: 'Wheatley School', tier: 'gold' },
+      { name: 'General Motors', tier: 'silver' },
+      { name: 'Local Partners', tier: 'bronze' }
+    ]
   },
   {
     year: '2022',
@@ -43,7 +74,12 @@ const previousRobots: Robot[] = [
     game: 'RAPID REACT',
     description: 'Championship-winning robot with exceptional ball handling and climbing mechanisms.',
     achievements: ['Regional Champions', 'Innovation in Control Award'],
-    keyFeatures: ['Turret Shooter', 'Rapid Intake', 'Traversal Climb', 'Auto Targeting']
+    keyFeatures: ['Turret Shooter', 'Rapid Intake', 'Traversal Climb', 'Auto Targeting'],
+    sponsors: [
+      { name: 'Boeing', tier: 'diamond' },
+      { name: 'Wheatley School', tier: 'gold' },
+      { name: 'Local Partners', tier: 'bronze' }
+    ]
   }
 ]
 
@@ -114,9 +150,30 @@ export default function PreviousRobots() {
                   </div>
                 </div>
 
-                <h3 className="text-3xl font-bold text-white font-mono mb-4">
-                  {robot.name}
-                </h3>
+                <div className="mb-4">
+                  <h3 className="text-3xl font-bold text-white font-mono mb-3">
+                    {robot.name}
+                  </h3>
+                  
+                  {/* Sponsors */}
+                  <div className="mb-2">
+                    <div className="text-gray-400 text-xs font-mono uppercase tracking-wider mb-2">
+                      Sponsored by
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {robot.sponsors.map((sponsor) => (
+                        <span
+                          key={sponsor.name}
+                          className={`inline-block px-3 py-1 rounded-full text-xs font-mono font-bold border ${
+                            tierColors[sponsor.tier]
+                          }`}
+                        >
+                          {sponsor.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 <p className="text-gray-300 text-lg leading-relaxed mb-6">
                   {robot.description}

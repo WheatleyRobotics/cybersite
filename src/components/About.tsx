@@ -11,9 +11,9 @@ export default function About() {
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-20"
         >
           <h2 className="text-5xl font-black text-white mb-4">
@@ -27,9 +27,9 @@ export default function About() {
 
         {/* Mission Statement */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mb-24"
         >
           <div className="bg-gradient-to-r from-red-500/10 to-gray-900/50 border border-red-500/20 rounded-lg p-8 text-center">
@@ -56,7 +56,7 @@ export default function About() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center text-gray-400 hover:text-red-500 transition-colors cursor-pointer"
+            className="flex flex-col items-center text-gray-400 hover:text-red-500 cursor-pointer"
             onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' })}
           >
             <span className="text-sm font-mono mb-2">SCROLL DOWN</span>

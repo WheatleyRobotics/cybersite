@@ -117,7 +117,7 @@ export default function Hero() {
                 href="/robot"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block px-8 py-3 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 transition-colors"
+                className="inline-block px-8 py-3 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400"
               >
                 View Robot
               </motion.a>
@@ -125,7 +125,7 @@ export default function Hero() {
                 href="/about"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block px-8 py-3 border-2 border-red-500 text-red-500 font-mono font-bold uppercase tracking-wider hover:bg-red-500 hover:text-black transition-colors"
+                className="inline-block px-8 py-3 border-2 border-red-500 text-red-500 font-mono font-bold uppercase tracking-wider hover:bg-red-500 hover:text-black"
               >
                 Our Team
               </motion.a>

@@ -201,7 +201,7 @@ export default function TeamRoster() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/30 rounded-lg p-6 hover:bg-yellow-500/10 transition-all duration-300 hover:shadow-2xl"
+                className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/30 rounded-lg p-6 hover:bg-yellow-500/10 hover:shadow-2xl"
               >
                 {/* Mentor Picture Placeholder */}
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-yellow-500/30 overflow-hidden">
@@ -214,7 +214,7 @@ export default function TeamRoster() {
 
                 {/* Mentor Info */}
                 <div className="text-center">
-                  <h4 className="text-white font-bold text-lg mb-1 font-mono group-hover:text-yellow-500 transition-colors duration-300">
+                  <h4 className="text-white font-bold text-lg mb-1 font-mono group-hover:text-yellow-500">
                     {member.name}
                   </h4>
                   <div className="inline-block px-3 py-1 rounded-full text-xs font-mono mb-2 bg-yellow-500/20 text-yellow-500 border border-yellow-500/40">
@@ -266,7 +266,7 @@ export default function TeamRoster() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} transition-all duration-300 hover:shadow-2xl`}
+                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} hover:shadow-2xl`}
                 >
                   {/* Profile Picture Placeholder */}
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-gray-600 overflow-hidden">
@@ -279,7 +279,7 @@ export default function TeamRoster() {
 
                   {/* Member Info */}
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-1 font-mono group-hover:text-red-500 transition-colors duration-300 h-12 flex items-center justify-center">
+                    <h4 className="text-white font-bold text-lg mb-1 font-mono group-hover:text-red-500 h-12 flex items-center justify-center">
                       {member.name}
                     </h4>
                     
@@ -324,7 +324,7 @@ export default function TeamRoster() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-4 hover:${config.bgColor} transition-all duration-300 hover:shadow-lg`}
+                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-4 hover:${config.bgColor} hover:shadow-lg`}
                 >
                   {/* Subteam Icon */}
                   <div className={`w-16 h-16 mx-auto mb-3 rounded-full ${config.bgColor} border-2 ${config.borderColor} flex items-center justify-center`}>
@@ -333,7 +333,7 @@ export default function TeamRoster() {
 
                   {/* Member Info */}
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-sm mb-1 font-mono group-hover:text-gray-300 transition-colors duration-300">
+                    <h4 className="text-white font-bold text-sm mb-1 font-mono group-hover:text-gray-300">
                       {member.name}
                     </h4>
                     
@@ -379,6 +379,19 @@ export default function TeamRoster() {
                   className="bg-black/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors font-mono"
                 />
               </div>
+              <select
+                className="w-full bg-black/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 transition-colors font-mono"
+                defaultValue=""
+              >
+                <option value="" disabled className="text-gray-400">Select inquiry type</option>
+                <option value="general" className="bg-black text-white">General Information</option>
+                <option value="join" className="bg-black text-white">Joining the Team</option>
+                <option value="mentorship" className="bg-black text-white">Mentorship Opportunities</option>
+                <option value="sponsorship" className="bg-black text-white">Sponsorship</option>
+                <option value="media" className="bg-black text-white">Media & Press</option>
+                <option value="technical" className="bg-black text-white">Technical Questions</option>
+                <option value="other" className="bg-black text-white">Other</option>
+              </select>
               <input
                 type="text"
                 placeholder="Subject"
@@ -392,7 +405,7 @@ export default function TeamRoster() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 transition-colors rounded-lg"
+                className="w-full px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
               >
                 Send Message
               </motion.button>

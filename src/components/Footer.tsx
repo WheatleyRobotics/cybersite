@@ -38,7 +38,7 @@ export default function Footer() {
                 href="https://github.com/cybercats2872"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
                 aria-label="Github"
               >
                 <Github className="w-5 h-5" />
@@ -47,7 +47,7 @@ export default function Footer() {
                 href="https://twitter.com/cybercats2872"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -56,14 +56,14 @@ export default function Footer() {
                 href="https://instagram.com/cybercats2872"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contact@cybercats2872.com"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -77,44 +77,44 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-x-6">
               <ul className="space-y-3">
                 <li>
-                  <Link href="/" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <Link href="/" className="text-gray-400 hover:text-red-500  text-sm">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <a href="/about" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="/about" className="text-gray-400 hover:text-red-500  text-sm">
                     About & Team
                   </a>
                 </li>
                 <li>
-                  <a href="/robot" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="/robot" className="text-gray-400 hover:text-red-500  text-sm">
                     Previous Robots
                   </a>
                 </li>
                 <li>
-                  <a href="/calendar" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="/calendar" className="text-gray-400 hover:text-red-500  text-sm">
                     Calendar
                   </a>
                 </li>
               </ul>
               <ul className="space-y-3">
                 <li>
-                  <a href="/sponsors" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="/sponsors" className="text-gray-400 hover:text-red-500  text-sm">
                     Sponsors
                   </a>
                 </li>
                 <li>
-                  <a href="/contact" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="/contact" className="text-gray-400 hover:text-red-500  text-sm">
                     Contact
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.thebluealliance.com/team/2872" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="https://www.thebluealliance.com/team/2872" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500  text-sm">
                     Blue Alliance
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500 transition-colors text-sm">
+                  <a href="https://www.firstinspires.org/robotics/frc" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-500  text-sm">
                     FIRST Robotics
                   </a>
                 </li>
@@ -126,9 +126,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6 font-mono">CONTACT INFO</h3>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                <div>
+              <div className="flex flex-col items-center space-y-2">
+                <MapPin className="w-5 h-5 text-red-500" />
+                <div className="text-center">
                   <p className="text-gray-400 text-sm">
                     Wheatley School<br />
                     Old Westbury, NY<br />
@@ -155,10 +155,10 @@ export default function Footer() {
               © {currentYear} FRC Team 2872 CyberCats. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-500 ">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-red-500 ">
                 Terms of Service
               </a>
               <div className="text-gray-500">

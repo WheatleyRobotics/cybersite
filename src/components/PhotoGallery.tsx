@@ -182,8 +182,8 @@ export default function PhotoGallery() {
                     ? 'bg-red-500 text-black font-bold'
                     : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
                 }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ y: -3 }}
+                whileTap={{ y: 0 }}
               >
                 <category.icon className="w-4 h-4" />
                 <span>{category.name}</span>
@@ -202,9 +202,9 @@ export default function PhotoGallery() {
               {filteredPhotos.map((photo, index) => (
                 <motion.div
                   key={photo.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group relative overflow-hidden rounded-lg bg-gray-800 cursor-pointer"
                   onClick={() => openLightbox(photo)}
@@ -214,13 +214,13 @@ export default function PhotoGallery() {
                       src={photo.src}
                       alt={photo.alt}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-end">
                     <div className="p-6 text-white">
                       <h3 className="font-bold text-lg mb-2 font-mono">{photo.title}</h3>
                       <p className="text-gray-300 text-sm">{photo.description}</p>
@@ -263,7 +263,7 @@ export default function PhotoGallery() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 z-60 p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors duration-300"
+              className="absolute top-6 right-6 z-60 p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg"
             >
               <X className="w-6 h-6" />
             </button>
@@ -274,7 +274,7 @@ export default function PhotoGallery() {
                 e.stopPropagation()
                 navigatePhoto('prev')
               }}
-              className="absolute left-6 z-60 p-3 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors duration-300"
+              className="absolute left-6 z-60 p-3 bg-gray-800 hover:bg-red-500 text-white rounded-lg"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -284,7 +284,7 @@ export default function PhotoGallery() {
                 e.stopPropagation()
                 navigatePhoto('next')
               }}
-              className="absolute right-6 z-60 p-3 bg-gray-800 hover:bg-red-500 text-white rounded-lg transition-colors duration-300"
+              className="absolute right-6 z-60 p-3 bg-gray-800 hover:bg-red-500 text-white rounded-lg"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
