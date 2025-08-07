@@ -157,11 +157,11 @@ export default function Sponsors() {
                 </div>
 
                 {/* Sponsor Grid */}
-                <div className={`grid gap-8 max-w-6xl mx-auto ${
+                <div className={`grid gap-8 max-w-6xl mx-auto justify-items-center ${
+                  tierSponsors.length === 1 ? 'grid-cols-1 max-w-lg mx-auto' :
                   tierKey === 'diamond' ? 'grid-cols-1 md:grid-cols-2' :
                   tierKey === 'gold' ? 'grid-cols-1 md:grid-cols-2' :
-                  tierKey === 'silver' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
-                  'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                  'grid-cols-1 md:grid-cols-2'
                 }`}>
                   {tierSponsors.map((sponsor, index) => (
                     <motion.div
@@ -246,13 +246,16 @@ export default function Sponsors() {
               Partner with CyberCats and support the next generation of STEM leaders. 
               Multiple sponsorship tiers available with various benefits and recognition levels.
             </p>
-            <motion.button
+            <motion.a
+              href="https://drive.google.com/file/d/17guj6mOxxli2tHUjPJAJOaMYC1b8rsBX/view"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
-              className="px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
+              className="inline-block px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
             >
               Sponsorship Opportunities
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 

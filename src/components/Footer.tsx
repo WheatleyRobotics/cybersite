@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Github, Twitter, Instagram, Mail, MapPin, Phone } from 'lucide-react'
+import { Github, Twitter, Instagram, Mail, MapPin, Phone, Youtube, Box } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -44,16 +44,16 @@ export default function Footer() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com/cybercats2872"
+                href="https://x.com/thecybercats?lang=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
-                aria-label="Twitter"
+                aria-label="X (Twitter)"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com/cybercats2872"
+                href="https://www.instagram.com/thewheatleycybercats/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
@@ -62,11 +62,22 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@cybercats2872.com"
+                href="https://www.youtube.com/@2872CyberCats"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
-                aria-label="Email"
+                aria-label="YouTube"
               >
-                <Mail className="w-5 h-5" />
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://cad.onshape.com/documents/90cc8aa637ad551e8b9d4212/w/98d02ecdaaa5b029e288b6f7/e/53a2cd1cc401759a04a91ae1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
+                aria-label="OnShape CAD"
+              >
+                <Box className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -126,9 +137,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6 font-mono">CONTACT INFO</h3>
             <div className="space-y-4">
-              <div className="flex flex-col items-center space-y-2">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <div className="text-center">
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="text-left">
                   <p className="text-gray-400 text-sm">
                     Wheatley School<br />
                     Old Westbury, NY<br />
