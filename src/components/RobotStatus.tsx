@@ -149,7 +149,7 @@ function Robot({
       {[
         [-1, -0.8, -1], [1, -0.8, -1], [-1, -0.8, 1], [1, -0.8, 1]
       ].map((pos, index) => (
-        <group key={`swerve-${index}`} position={pos}>
+        <group key={`swerve-${index}`} position={pos as [number, number, number]}>
           <Box args={[0.3, 0.2, 0.3]}>
             <meshStandardMaterial 
               color={getComponentColor(components[0], '#333')}

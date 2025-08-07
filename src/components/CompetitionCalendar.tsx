@@ -189,7 +189,7 @@ export default function CompetitionCalendar() {
             ].map((tab) => (
               <motion.button
                 key={tab.key}
-                onClick={() => setSelectedView(tab.key as 'upcoming' | 'past')}
+                onClick={() => setSelectedView(tab.key as 'upcoming' | 'completed' | 'all')}
                 className={`px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 ${
                   selectedView === tab.key
                     ? 'bg-red-500 text-black font-bold'
