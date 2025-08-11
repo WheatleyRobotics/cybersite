@@ -102,8 +102,7 @@ export default function ContactForm() {
                   <Mail className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-white font-bold font-mono mb-2">EMAIL</h3>
-                    <p className="text-gray-400 text-sm">contact@cybercats2872.com</p>
-                    <p className="text-gray-400 text-sm">team@cybercats2872.com</p>
+                    <p className="text-gray-400 text-sm">contact@team2872.org</p>
                   </div>
                 </div>
 
@@ -111,7 +110,7 @@ export default function ContactForm() {
                   <Phone className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-white font-bold font-mono mb-2">PHONE</h3>
-                    <p className="text-gray-400 text-sm">(555) 123-4567</p>
+                    <p className="text-gray-400 text-sm">(516) 904-6879</p>
                     <p className="text-gray-500 text-xs">Business Hours: M-F 3-7 PM</p>
                   </div>
                 </div>
@@ -121,9 +120,9 @@ export default function ContactForm() {
                   <div>
                     <h3 className="text-white font-bold font-mono mb-2">LOCATION</h3>
                     <p className="text-gray-400 text-sm">
-                      CyberCats Engineering Lab<br />
-                      High School Campus<br />
-                      City, State 12345
+                      Robotics Lab<br />
+                      The Wheatley School<br />
+                      Old Westbury, New York 11568
                     </p>
                   </div>
                 </div>

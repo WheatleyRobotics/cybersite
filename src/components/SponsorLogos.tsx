@@ -2,22 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Building2 } from 'lucide-react'
-
-const sponsors = [
-  { name: 'Boeing', tier: 'diamond' },
-  { name: 'ORICS Industries', tier: 'diamond' },
-  { name: 'Wheatley School', tier: 'gold' },
-  { name: 'nVent', tier: 'gold' },
-  { name: 'General Motors', tier: 'silver' },
-  { name: 'Local Partners', tier: 'bronze' }
-]
-
-const tierColors = {
-  diamond: 'text-teal-400 border-teal-400/20 bg-teal-400/5',
-  gold: 'text-yellow-400 border-yellow-400/20 bg-yellow-400/5',
-  silver: 'text-gray-400 border-gray-400/20 bg-gray-400/5',
-  bronze: 'text-orange-500 border-orange-500/20 bg-orange-500/5'
-}
+import { sponsors, tierColors } from '../data/sponsors'
 
 export default function SponsorLogos() {
   return (
@@ -54,7 +39,7 @@ export default function SponsorLogos() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {sponsors.map((sponsor, index) => (
             <motion.div

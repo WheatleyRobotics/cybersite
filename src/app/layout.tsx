@@ -44,6 +44,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon-180x180.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    ]
+  },
   openGraph: {
     type: 'website',
     siteName: 'CyberCats Robotics - Team 2872',
@@ -53,7 +68,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/robot/IMG_4367.jpeg',
+        url: '/robot/robot_5.jpeg',
         width: 1200,
         height: 800,
         alt: 'CyberCats Team 2872 Competition Robot - FIRST Robotics Competition',
@@ -69,7 +84,7 @@ export const metadata: Metadata = {
     description: 'Elite FIRST Robotics Competition team from Old Westbury, NY. Regional Champions 2022. Engineering excellence since 2009.',
     images: [
       {
-        url: '/robot/IMG_4367.jpeg',
+        url: '/robot/robot_5.jpeg',
         alt: 'CyberCats Team 2872 Competition Robot',
         width: 1200,
         height: 800,

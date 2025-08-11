@@ -2,114 +2,27 @@
 
 import { motion } from 'framer-motion'
 import { Building2, Award, Handshake } from 'lucide-react'
-
-interface Sponsor {
-  name: string
-  tier: 'diamond' | 'gold' | 'silver' | 'bronze'
-  website: string
-  contribution: string
-  description: string
-  since: number
-  sponsorType: 'Corporate Sponsor' | 'Business Sponsor' | 'Family Sponsor' | 'Partner'
-}
-
-const sponsors: Sponsor[] = [
-  {
-    name: 'Boeing',
-    tier: 'diamond',
-    website: 'https://boeing.com',
-    contribution: 'Primary Aerospace Sponsor',
-    description: 'Global aerospace leader providing engineering expertise, funding, and mentorship from industry professionals.',
-    since: 2018,
-    sponsorType: 'Corporate Sponsor'
-  },
-  {
-    name: 'ORICS Industries',
-    tier: 'diamond',
-    website: 'https://oricsindustries.com',
-    contribution: 'Manufacturing & Design',
-    description: 'Advanced manufacturing solutions and precision engineering support for competitive robotics.',
-    since: 2020,
-    sponsorType: 'Corporate Sponsor'
-  },
-  {
-    name: 'Wheatley School',
-    tier: 'gold',
-    website: 'https://wheatleyschool.org',
-    contribution: 'Educational Partner',
-    description: 'Our home school providing facilities, resources, and educational support for STEM programs.',
-    since: 2009,
-    sponsorType: 'Partner'
-  },
-  {
-    name: 'nVent',
-    tier: 'gold',
-    website: 'https://nvent.com',
-    contribution: 'Innovation Sponsor',
-    description: 'Electrical solutions company supporting our Innovation in Control Award achievements.',
-    since: 2019,
-    sponsorType: 'Corporate Sponsor'
-  },
-  {
-    name: 'General Motors',
-    tier: 'silver',
-    website: 'https://gm.com',
-    contribution: 'Industrial Design',
-    description: 'Automotive industry leader supporting industrial design and manufacturing excellence.',
-    since: 2021,
-    sponsorType: 'Corporate Sponsor'
-  },
-  {
-    name: 'Local Community Partners',
-    tier: 'bronze',
-    website: '#',
-    contribution: 'Community Support',
-    description: 'Long Island community businesses and families supporting our robotics journey.',
-    since: 2009,
-    sponsorType: 'Family Sponsor'
-  }
-]
+import { Sponsor, sponsors, tierConfig as baseTierConfig, sponsorsByTier } from '../data/sponsors'
 
 const tierConfig = {
+  ...baseTierConfig,
   diamond: {
-    color: 'from-teal-400 to-teal-300',
-    textColor: 'text-teal-400',
-    borderColor: 'border-teal-400/40',
-    bgColor: 'bg-teal-400/10',
-    icon: Award,
-    title: 'Diamond Partners'
+    ...baseTierConfig.diamond,
+    icon: Award
   },
   gold: {
-    color: 'from-yellow-400 to-yellow-500',
-    textColor: 'text-yellow-400',
-    borderColor: 'border-yellow-400/40',
-    bgColor: 'bg-yellow-400/10',
-    icon: Award,
-    title: 'Gold Partners'
+    ...baseTierConfig.gold,
+    icon: Award
   },
   silver: {
-    color: 'from-gray-400 to-gray-500',
-    textColor: 'text-gray-400',
-    borderColor: 'border-gray-400/40',
-    bgColor: 'bg-gray-400/10',
-    icon: Handshake,
-    title: 'Silver Partners'
+    ...baseTierConfig.silver,
+    icon: Handshake
   },
   bronze: {
-    color: 'from-orange-600 to-orange-700',
-    textColor: 'text-orange-600',
-    borderColor: 'border-orange-600/40',
-    bgColor: 'bg-orange-600/10',
-    icon: Building2,
-    title: 'Bronze Partners'
+    ...baseTierConfig.bronze,
+    icon: Building2
   }
 }
-
-const sponsorsByTier = sponsors.reduce((acc, sponsor) => {
-  if (!acc[sponsor.tier]) acc[sponsor.tier] = []
-  acc[sponsor.tier].push(sponsor)
-  return acc
-}, {} as Record<string, Sponsor[]>)
 
 export default function Sponsors() {
   return (

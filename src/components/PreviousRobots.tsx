@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Wrench, Award, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 interface RobotSponsor {
   name: string
@@ -16,6 +17,7 @@ interface Robot {
   achievements: string[]
   keyFeatures: string[]
   sponsors: RobotSponsor[]
+  image: string
 }
 
 const tierColors = {
@@ -34,11 +36,15 @@ const previousRobots: Robot[] = [
     achievements: ['Second Alliance', 'Innovation in Control'],
     keyFeatures: ['Swerve Drive', 'Vision-Guided Line-up', 'Funnel Intake', 'Precision Climbing'],
     sponsors: [
-      { name: 'Boeing', tier: 'diamond' },
+      { name: 'HAAS', tier: 'diamond' },
       { name: 'ORICS Industries', tier: 'diamond' },
-      { name: 'Wheatley School', tier: 'gold' },
-      { name: 'nVent', tier: 'gold' }
-    ]
+      { name: 'Cell Mechanics', tier: 'silver' },
+      { name: 'Salz Group', tier: 'silver' },
+      { name: 'Metro Brands', tier: 'bronze' },
+      { name: 'RDS Delivery', tier: 'bronze' },
+
+    ],
+    image: '/probot/orca.jpeg'
   },
   {
     year: '2024',
@@ -49,10 +55,15 @@ const previousRobots: Robot[] = [
     keyFeatures: ['Swerve Drive', 'Vision-Guided Shooting', 'Automated Intake', 'Precision Climbing'],
     sponsors: [
       { name: 'ORICS Industries', tier: 'diamond' },
+      { name: 'Boeing', tier: 'diamond' },
+      { name: 'HAAS', tier: 'diamond' },
       { name: 'Wheatley School', tier: 'gold' },
-      { name: 'General Motors', tier: 'silver' },
+      { name: 'Salz Group', tier: 'gold' },
+      { name: 'NYIT', tier: 'silver' },
+      { name: 'Fresco Creperie', tier: 'bronze' },
       { name: 'Local Partners', tier: 'bronze' }
-    ]
+    ],
+    image: '/probot/staccato.png'
   },
   {
     year: '2023',
@@ -62,11 +73,14 @@ const previousRobots: Robot[] = [
     achievements: ['Regional Finalists', 'Quality Award'],
     keyFeatures: ['Virtual Four Bar', 'Solenoid End Effector', 'Auto-Balance', '6 Falcon Tank Drive'],
     sponsors: [
-      { name: 'nVent', tier: 'gold' },
+      { name: 'HAAS', tier: 'diamond' },
+      { name: 'Boeing', tier: 'diamond' },
+      { name: 'ORICS', tier: 'diamond' },
       { name: 'Wheatley School', tier: 'gold' },
-      { name: 'General Motors', tier: 'silver' },
+      { name: 'NYIT', tier: 'silver' },
       { name: 'Local Partners', tier: 'bronze' }
-    ]
+    ],
+    image: '/probot/skeeter.jpeg'
   },
   {
     year: '2022',
@@ -76,10 +90,11 @@ const previousRobots: Robot[] = [
     achievements: ['Regional Champions', 'Innovation in Control Award'],
     keyFeatures: ['Turret Shooter', 'Rapid Intake', 'Traversal Climb', 'Auto Targeting'],
     sponsors: [
-      { name: 'Boeing', tier: 'diamond' },
+      { name: 'NASA', tier: 'diamond' },
       { name: 'Wheatley School', tier: 'gold' },
       { name: 'Local Partners', tier: 'bronze' }
-    ]
+    ],
+    image: '/probot/mantis.png'
   }
 ]
 
@@ -211,15 +226,16 @@ export default function PreviousRobots() {
                 </div>
               </div>
 
-              {/* Robot Visual Placeholder */}
+              {/* Robot Image */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border border-red-500/20 flex items-center justify-center hover:border-red-500/40 transition-all duration-300">
-                  <div className="text-center text-gray-500">
-                    <Wrench className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                    <div className="text-lg font-mono font-bold text-red-500">{robot.name}</div>
-                    <div className="text-sm">{robot.year} Competition Robot</div>
-                    <div className="text-xs mt-2 opacity-75">{robot.game}</div>
-                  </div>
+                <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border border-red-500/20 hover:border-red-500/40 transition-all duration-300 overflow-hidden">
+                  <Image
+                    src={robot.image}
+                    alt={`${robot.name} - ${robot.year} FIRST Robotics Competition Robot`}
+                    width={600}
+                    height={600}
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
             </motion.div>

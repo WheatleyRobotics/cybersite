@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, MapPin, Trophy, Users, ExternalLink } from 'lucide-react'
 
-interface CompetitionEvent {
+interface Event {
   id: string
   name: string
-  type: 'regional' | 'district' | 'championship' | 'off-season'
+  type: 'competition' | 'outreach' | 'presentation' | 'workshop' | 'meeting'
   date: Date
   endDate?: Date
   location: string
@@ -19,99 +19,76 @@ interface CompetitionEvent {
   teamCount?: number
 }
 
-const competitionEvents: CompetitionEvent[] = [
+const events: Event[] = [
   {
     id: '1',
-    name: 'FIRST Championship - Houston',
-    type: 'championship',
-    date: new Date('2025-04-16'),
-    endDate: new Date('2025-04-19'),
-    location: 'Houston, TX',
-    venue: 'George R. Brown Convention Center',
+    name: 'Long Island Maker Faire',
+    type: 'outreach',
+    date: new Date('2025-09-14'),
+    location: 'Stony Brook, NY',
+    venue: 'Stony Brook University',
     status: 'upcoming',
-    description: 'The ultimate robotics robot featuring the best teams from around the world.',
-    website: 'https://firstinspires.org',
-    teamCount: 600
+    description: 'Join us at the Long Island Maker Faire to see our latest robotics innovations and interact with our team.',
+    teamCount: 50
   },
   {
     id: '2',
-    name: 'District Championship',
-    type: 'district',
-    date: new Date('2025-03-15'),
-    endDate: new Date('2025-03-17'),
-    location: 'Austin, TX',
-    venue: 'Circuit of The Americas',
+    name: 'Season Kick Off',
+    type: 'meeting',
+    date: new Date('2026-01-10'),
+    location: 'East Williston, NY',
+    venue: 'The Wheatley School',
     status: 'upcoming',
-    description: 'Regional district championship qualifying event for World Championship.',
-    teamCount: 64
+    description: 'Official start of our 2025 robotics season with team preparation and planning.',
+    teamCount: 30
   },
   {
     id: '3',
-    name: 'Houston West Regional',
-    type: 'regional',
-    date: new Date('2024-03-07'),
-    endDate: new Date('2024-03-10'),
-    location: 'Houston, TX',
-    venue: 'Delmar Fieldhouse',
-    status: 'completed',
-    result: '1st Place - Regional Champions',
-    description: 'Our championship-winning performance with undefeated tournament run.',
-    teamCount: 48
-  },
-  {
-    id: '4',
-    name: 'Brazos Valley Regional',
-    type: 'regional',
-    date: new Date('2025-02-20'),
-    endDate: new Date('2025-02-23'),
-    location: 'Bryan, TX',
-    venue: 'Brazos Valley Expo Center',
+    name: 'Bryant Library Presentation & Demo',
+    type: 'presentation',
+    date: new Date('2025-08-16'),
+    location: 'Roslyn, NY',
+    venue: 'Bryant Library',
     status: 'upcoming',
-    description: 'First regional robot of the 2025 season.',
-    teamCount: 42
-  },
-  {
-    id: '5',
-    name: 'Off-Season Showcase',
-    type: 'off-season',
-    date: new Date('2024-07-15'),
-    location: 'Local High School',
-    venue: 'CyberCats Engineering Lab',
-    status: 'completed',
-    result: 'Innovation Award',
-    description: 'Summer showcase event demonstrating our latest robot improvements.',
-    teamCount: 12
+    description: 'Community presentation showcasing our robotics program and live robot demonstrations.',
+    teamCount: 15
   }
 ]
 
 const eventTypeConfig = {
-  championship: {
-    color: 'text-yellow-500',
-    bgColor: 'bg-yellow-500/10',
-    borderColor: 'border-yellow-500/30',
-    icon: Trophy
-  },
-  district: {
-    color: 'text-blue-500',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/30',
-    icon: Trophy
-  },
-  regional: {
+  competition: {
     color: 'text-red-500',
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/30',
     icon: Trophy
   },
-  'off-season': {
+  outreach: {
     color: 'text-green-500',
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/30',
     icon: Users
+  },
+  presentation: {
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/30',
+    icon: ExternalLink
+  },
+  workshop: {
+    color: 'text-purple-500',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500/30',
+    icon: Users
+  },
+  meeting: {
+    color: 'text-yellow-500',
+    bgColor: 'bg-yellow-500/10',
+    borderColor: 'border-yellow-500/30',
+    icon: Calendar
   }
 }
 
-export default function CompetitionCalendar() {
+export default function TeamCalendar() {
   const [selectedView, setSelectedView] = useState<'upcoming' | 'completed' | 'all'>('upcoming')
   const [currentTime, setCurrentTime] = useState(new Date())
 
@@ -120,7 +97,7 @@ export default function CompetitionCalendar() {
     return () => clearInterval(timer)
   }, [])
 
-  const filteredEvents = competitionEvents.filter(event => {
+  const filteredEvents = events.filter(event => {
     if (selectedView === 'all') return true
     if (selectedView === 'upcoming') return event.status === 'upcoming' || event.status === 'in-progress'
     return event.status === 'completed'
@@ -166,11 +143,10 @@ export default function CompetitionCalendar() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            COMPETITION <span className="text-red-500">CALENDAR</span>
+            TEAM <span className="text-red-500">CALENDAR</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Track our competitive journey through regionals, districts, and championship events. 
-            Every competition is a step toward engineering excellence.
+            Stay up to date with all our team events including competitions, outreach activities, presentations, and team meetings.
           </p>
         </motion.div>
 
@@ -184,7 +160,7 @@ export default function CompetitionCalendar() {
           <div className="flex space-x-1 bg-gray-900/50 border border-red-500/20 rounded-lg p-1">
             {[
               { key: 'upcoming', label: 'Upcoming' },
-              { key: 'completed', label: 'Results' },
+              { key: 'completed', label: 'Past Events' },
               { key: 'all', label: 'All Events' }
             ].map((tab) => (
               <motion.button
@@ -260,13 +236,6 @@ export default function CompetitionCalendar() {
                   </div>
                 </div>
 
-                {/* Team Count */}
-                {event.teamCount && (
-                  <div className="flex items-center space-x-2 text-gray-400 mb-4">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm">{event.teamCount} teams</span>
-                  </div>
-                )}
 
                 {/* Description */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">

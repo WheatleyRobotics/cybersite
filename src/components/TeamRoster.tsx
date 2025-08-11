@@ -1,16 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Users, Code, Wrench, Brain } from 'lucide-react'
+import { Users, Code, Wrench, Brain, Camera } from 'lucide-react'
 
 interface TeamMember {
   name: string
   role: string
-  subteam: 'mechanical' | 'programming' | 'business' | 'outreach'
+  subteam: 'mechanical' | 'programming' | 'business' | 'outreach' | 'media'
   experience: string
-  specialties: string[]
   type: 'student' | 'mentor' | 'member'
-  title?: string // For mentors - their professional title
 }
 
 const teamMembers: TeamMember[] = [
@@ -20,7 +18,6 @@ const teamMembers: TeamMember[] = [
     role: 'CAD & Electrical',
     subteam: 'mechanical',
     experience: '3 years',
-    specialties: ['CAD Design', 'Manufacturing', 'Electrical'],
     type: 'student'
   },
   {
@@ -28,7 +25,6 @@ const teamMembers: TeamMember[] = [
     role: 'Mechanical',
     subteam: 'mechanical',
     experience: '3 years',
-    specialties: ['CAD Design', 'Manufacturing', 'Drive Systems'],
     type: 'student'
   },
   {
@@ -36,7 +32,6 @@ const teamMembers: TeamMember[] = [
     role: 'Programming',
     subteam: 'programming',
     experience: '3 years',
-    specialties: ['Autonomous', 'Vision Systems', 'Controls'],
     type: 'student'
   },
   {
@@ -44,7 +39,6 @@ const teamMembers: TeamMember[] = [
     role: 'Business',
     subteam: 'business',
     experience: '3 years',
-    specialties: ['Strategy', 'Finance', 'Project Management'],
     type: 'student'
   },
   {
@@ -52,86 +46,88 @@ const teamMembers: TeamMember[] = [
     role: 'Outreach Captain',
     subteam: 'outreach',
     experience: '2 years',
-    specialties: ['Community Events', 'Social Media', 'Fundraising'],
     type: 'student'
   },
   
   // Regular Team Members
   {
-    name: 'Team Member 1',
+    name: 'Ronald Kahut',
     role: 'Member',
     subteam: 'mechanical',
     experience: '2 years',
-    specialties: ['Assembly', 'Testing', 'Documentation'],
     type: 'member'
   },
   {
-    name: 'Team Member 2',
+    name: 'Neil Singh',
     role: 'Member',
     subteam: 'programming',
-    experience: '1 year',
-    specialties: ['Testing', 'Documentation', 'Debugging'],
+    experience: '3 year',
     type: 'member'
   },
   {
-    name: 'Team Member 3',
+    name: 'Tyron Mai',
+    role: 'Member',
+    subteam: 'media',
+    experience: '3 year',
+    type: 'member'
+  },
+  {
+    name: 'Enzo Panetta',
     role: 'Member',
     subteam: 'business',
     experience: '2 years',
-    specialties: ['Documentation', 'Presentations', 'Research'],
     type: 'member'
   },
   {
-    name: 'Team Member 4',
+    name: 'Mathew Gbenebitse',
     role: 'Member',
-    subteam: 'outreach',
-    experience: '1 year',
-    specialties: ['Event Planning', 'Photography', 'Social Media'],
+    subteam: 'mechanical',
+    experience: '2 years',
     type: 'member'
   },
   {
-    name: 'Team Member 5',
+    name: 'Julian Buonaiuto',
+    role: 'Member',
+    subteam: 'mechanical',
+    experience: '2 years',
+    type: 'member'
+  },
+  {
+    name: 'Ryan Jiang',
     role: 'Member',
     subteam: 'mechanical',
     experience: '1 year',
-    specialties: ['CAD Learning', 'Assembly', 'Tool Training'],
     type: 'member'
   },
   {
-    name: 'Team Member 6',
+    name: 'Matthew Caputo',
     role: 'Member',
-    subteam: 'programming',
-    experience: '1 year',
-    specialties: ['Java Learning', 'Testing', 'Code Review'],
+    subteam: 'mechanical',
+    experience: '3 year',
     type: 'member'
   },
   
   // Mentors
-  {
-    name: 'Shawn Khillian',
-    role: 'Programming Mentor',
-    title: 'Software Engineer',
-    subteam: 'programming',
-    experience: '3 years mentoring',
-    specialties: ['Embedded Systems', 'Computer Vision', 'Robotics Software'],
-    type: 'mentor'
-  },
+
   {
     name: 'Patrick Hurley',
     role: 'Head Mentor',
-    title: 'EWSD Teacher and FRC Mentor',
     subteam: 'mechanical',
     experience: '12 years mentoring',
-    specialties: ['Mechanical Engineering', 'Project Management', 'Leadership'],
+    type: 'mentor'
+  },
+  {
+    name: 'Shawn Khillian',
+    role: 'Programming Mentor',
+    subteam: 'programming',
+    experience: '3 years mentoring',
     type: 'mentor'
   },
   {
     name: 'Brian Reynolds',
     role: 'Mentor',
-    title: 'EWSD Teacher',
     subteam: 'mechanical',
     experience: '6 years mentoring',
-    specialties: ['Team Management', 'Sponsorship', 'Strategic Planning'],
     type: 'mentor'
   }
 ]
@@ -160,7 +156,28 @@ const subteamConfig = {
     color: 'text-green-500',
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/30'
+  },
+  media: {
+    icon: Camera,
+    color: 'text-gray-400',
+    bgColor: 'bg-gray-500/10',
+    borderColor: 'border-gray-500/70'
   }
+}
+
+const getPhotoPath = (name: string) => {
+  const lastName = name.split(' ').pop()?.toLowerCase()
+  const availablePhotos = ['hurley', 'ouyang', 'reynolds']
+  
+  if (lastName && availablePhotos.includes(lastName)) {
+    const extensions = ['jpg', 'jpeg', 'png']
+    // Try different extensions - we'll use the one that exists
+    if (lastName === 'hurley') return '/roster/hurley.jpg'
+    if (lastName === 'ouyang') return '/roster/ouyang.jpeg'
+    if (lastName === 'reynolds') return '/roster/reynolds.jpg'
+  }
+  
+  return null
 }
 
 
@@ -203,13 +220,21 @@ export default function TeamRoster() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/30 rounded-lg p-6 hover:bg-yellow-500/10 hover:shadow-2xl"
               >
-                {/* Mentor Picture Placeholder */}
+                {/* Mentor Picture */}
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-yellow-500/30 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                    <div className="text-gray-500 text-xs font-mono text-center">
-                      PHOTO
+                  {getPhotoPath(member.name) ? (
+                    <img 
+                      src={getPhotoPath(member.name)!} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
+                      <div className="text-gray-500 text-xs font-mono text-center">
+                        PHOTO
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Mentor Info */}
@@ -220,29 +245,14 @@ export default function TeamRoster() {
                   <div className="inline-block px-3 py-1 rounded-full text-xs font-mono mb-2 bg-yellow-500/20 text-yellow-500 border border-yellow-500/40">
                     {member.role}
                   </div>
-                  {member.title && (
-                    <div className="text-gray-300 text-sm mb-3 font-mono">
-                      {member.title}
-                    </div>
-                  )}
                   
                   <div className="text-gray-400 text-sm mb-4">
                     <div className="font-mono uppercase tracking-wider mb-1">{member.subteam} MENTOR</div>
                     <div className="text-xs">{member.experience}</div>
                   </div>
 
-                  {/* Mentor Specialties */}
-                  <div className="space-y-1">
-                    {member.specialties.map((specialty, i) => (
-                      <div key={i} className="text-gray-500 text-xs font-mono">
-                        {specialty}
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Mentor Indicator */}
-                <div className="absolute top-3 right-3 w-3 h-3 rounded-full bg-gradient-to-r from-yellow-500 to-transparent" />
               </motion.div>
             ))}
           </div>
@@ -268,13 +278,21 @@ export default function TeamRoster() {
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} hover:shadow-2xl`}
                 >
-                  {/* Profile Picture Placeholder */}
+                  {/* Profile Picture */}
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-gray-600 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-                      <div className="text-gray-500 text-xs font-mono text-center">
-                        PHOTO
+                    {getPhotoPath(member.name) ? (
+                      <img 
+                        src={getPhotoPath(member.name)!} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
+                        <div className="text-gray-500 text-xs font-mono text-center">
+                          PHOTO
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   {/* Member Info */}
@@ -288,18 +306,8 @@ export default function TeamRoster() {
                       <div className="text-xs">{member.experience} experience</div>
                     </div>
 
-                    {/* Specialties */}
-                    <div className="space-y-1">
-                      {member.specialties.map((specialty, i) => (
-                        <div key={i} className="text-gray-500 text-xs font-mono">
-                          {specialty}
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Subteam Indicator */}
-                  <div className={`absolute top-3 right-3 w-3 h-3 rounded-full bg-gradient-to-r ${config.color.replace('text-', 'from-')} to-transparent`} />
                 </motion.div>
               )
             })}
@@ -343,8 +351,6 @@ export default function TeamRoster() {
                     </div>
                   </div>
 
-                  {/* Subteam Indicator */}
-                  <div className={`absolute top-2 right-2 w-2 h-2 rounded-full bg-gradient-to-r ${config.color.replace('text-', 'from-')} to-transparent`} />
                 </motion.div>
               )
             })}

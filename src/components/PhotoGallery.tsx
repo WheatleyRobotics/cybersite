@@ -18,101 +18,101 @@ const photos: Photo[] = [
   // Robot Photos (6)
   {
     id: 'robot_001',
-    src: '/robot/0Q0A0227.JPG',
+    src: '/robot/robot_1.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 1',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'robot_002',
-    src: '/robot/0Q0A2793.JPG',
+    src: '/robot/robot_2.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 2',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'robot_003',
-    src: '/robot/DSC00860.JPG',
+    src: '/robot/robot_3.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 3',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'robot_004',
-    src: '/robot/DSC_5958.JPG',
+    src: '/robot/robot_4.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 4',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'robot_005',
-    src: '/robot/IMG_4367.jpeg',
+    src: '/robot/robot_5.jpeg',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 5',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'robot_006',
-    src: '/robot/cachedImage.PNG',
+    src: '/robot/robot_6.PNG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: 'Robot Photo 6',
-    description: 'Robot photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   
   // Team Photos (6)
   {
     id: 'team_001',
-    src: '/team/0Q0A3225.JPG',
+    src: '/team/team_1.JPG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 1',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'team_002',
-    src: '/team/2.PNG',
+    src: '/team/team_2.PNG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 2',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'team_003',
-    src: '/team/IMG_0020.jpeg',
+    src: '/team/team_3.jpeg',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 3',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'team_004',
-    src: '/team/IMG_6198.png',
+    src: '/team/team_4.png',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 4',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'team_005',
-    src: '/team/IMG_7521.png',
+    src: '/team/team_5.png',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 5',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   },
   {
     id: 'team_006',
-    src: '/team/cachedImage.PNG',
+    src: '/team/team_6.PNG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: 'Team Photo 6',
-    description: 'Team photo - description to be updated manually.'
+    title: '',
+    description: ''
   }
 ]
 
@@ -294,10 +294,10 @@ export default function PhotoGallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="max-w-5xl mx-auto"
+              className="w-full h-full flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-video overflow-hidden rounded-lg mb-6">
+              <div className="relative max-w-[90vw] max-h-[80vh] w-full h-full">
                 <Image
                   src={selectedPhoto.src}
                   alt={selectedPhoto.alt}

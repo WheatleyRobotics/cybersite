@@ -29,9 +29,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">
-              Precision engineers, strategic innovators, and collaborative builders. 
-              We architect solutions that push the boundaries of competitive robotics 
-              and inspire the next generation of STEM leaders.
+              A FIRST Robotics Competition team dedicated to building competitive robots,
+              learning engineering skills, and promoting STEM education in our community.
             </p>
             <div className="flex space-x-4">
               <a
@@ -149,11 +148,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <p className="text-gray-400 text-sm">(555) 123-4567</p>
+                <p className="text-gray-400 text-sm">(516) 904-6879</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
-                <p className="text-gray-400 text-sm">contact@cybercats2872.com</p>
+                <p className="text-gray-400 text-sm">contact@team2872.com</p>
               </div>
             </div>
           </div>

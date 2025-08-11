@@ -101,14 +101,13 @@ export default function Hero() {
 
             <div className="space-y-6">
               <p className="text-xl text-gray-300 leading-relaxed">
-                We are precision engineers, strategic innovators, and collaborative builders. 
-                Our mission transcends traditional robotics—we architect solutions that push 
-                the boundaries of what&apos;s possible in competitive engineering.
+                Based in Old Westbury, New York, we&apos;re a FIRST Robotics team that designs, 
+                builds, and programs competitive robots. Since 2009, we&apos;ve participated in 
+                regional competitions, earning recognition including our recent Innovation in Control Award.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
-                Every bolt tightened, every line of code written, every strategy deployed 
-                represents our commitment to excellence. We don&apos;t just build robots; 
-                we engineer the future.
+                Our team members learn hands-on engineering, programming, and project management 
+                while working together to tackle each season&apos;s unique challenge.
               </p>
             </div>
 
