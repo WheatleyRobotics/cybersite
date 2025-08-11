@@ -43,6 +43,9 @@ export default function Navbar() {
             <a href="/calendar" className="text-white hover:text-red-500  font-mono text-sm">
               CALENDAR
             </a>
+            <a href="/impact" className="text-white hover:text-red-500  font-mono text-sm">
+              IMPACT
+            </a>
             <a href="/sponsors" className="text-white hover:text-red-500  font-mono text-sm">
               SPONSORS
             </a>
@@ -77,6 +80,9 @@ export default function Navbar() {
               </a>
               <a href="/calendar" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
                 CALENDAR
+              </a>
+              <a href="/impact" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
+                IMPACT
               </a>
               <a href="/sponsors" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
                 SPONSORS
