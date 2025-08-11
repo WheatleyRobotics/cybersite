@@ -111,7 +111,7 @@ export default function PreviousRobots() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            PREVIOUS <span className="text-red-500">ROBOTS</span>
+            HALL OF <span className="text-red-500">FAME</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             A legacy of innovation spanning over a decade. Each robot represents years of learning, 

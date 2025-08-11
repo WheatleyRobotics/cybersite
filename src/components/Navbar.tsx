@@ -75,9 +75,6 @@ export default function Navbar() {
               <a href="/robot" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
                 ROBOTS
               </a>
-              <a href="/team" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
-                TEAM
-              </a>
               <a href="/calendar" className="block px-3 py-2 text-white hover:text-red-500  font-mono text-sm">
                 CALENDAR
               </a>

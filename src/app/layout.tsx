@@ -68,10 +68,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/robot/robot_5.jpeg',
+        url: '/team/team_1.JPG',
         width: 1200,
-        height: 800,
-        alt: 'CyberCats Team 2872 Competition Robot - FIRST Robotics Competition',
+        height: 630,
+        alt: 'CyberCats Robotics Team 2872 - FIRST Robotics Competition',
         type: 'image/jpeg',
       },
     ],
@@ -84,10 +84,10 @@ export const metadata: Metadata = {
     description: 'Elite FIRST Robotics Competition team from Old Westbury, NY. Regional Champions 2022. Engineering excellence since 2009.',
     images: [
       {
-        url: '/robot/robot_5.jpeg',
-        alt: 'CyberCats Team 2872 Competition Robot',
+        url: '/team/team_1.JPG',
+        alt: 'CyberCats Robotics Team 2872',
         width: 1200,
-        height: 800,
+        height: 630,
       }
     ],
   },

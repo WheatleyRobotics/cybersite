@@ -45,7 +45,7 @@ const events: Event[] = [
   {
     id: '3',
     name: 'Bryant Library Presentation & Demo',
-    type: 'presentation',
+    type: 'outreach',
     date: new Date('2025-08-16'),
     location: 'Roslyn, NY',
     venue: 'Bryant Library',

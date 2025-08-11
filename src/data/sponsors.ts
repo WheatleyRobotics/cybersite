@@ -14,7 +14,7 @@ export const sponsors: Sponsor[] = [
     tier: 'diamond',
     website: 'https://www.haascnc.com/index.html#gsc.tab=0',
     contribution: 'Engineering Mentorship & Funding',
-    description: 'Provides professional engineers as mentors, funding for competition travel, and access to aerospace industry expertise and best practices.',
+    description: 'Our top sponsor for our Reefscape, Crescendo, and Charged Up season. They provide funding for competition travel, material, and electronics.',
     since: 2022,
     sponsorType: 'Corporate Sponsor'
   },
@@ -35,6 +35,15 @@ export const sponsors: Sponsor[] = [
     description: 'Provides workshop space, tools, meeting rooms, and transportation to competitions. Home base for team operations and storage.',
     since: 2009,
     sponsorType: 'Partner'
+  },
+  {
+    name: 'Cell Mechanics',
+    tier: 'silver',
+    website: 'https://www.cellmechanic.com',
+    contribution: 'Technology & Funding',
+    description: 'Professional mobile device repair and technology services supporting our team operations, recently sponsoring a Bambu Lab H2D 3D Printer',
+    since: 2023,
+    sponsorType: 'Business Sponsor'
   },
   {
     name: 'Team Parent Network',

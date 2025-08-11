@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Building2, Award, Handshake } from 'lucide-react'
+import { Building2, Award, Handshake, Mail } from 'lucide-react'
 import { Sponsor, sponsors, tierConfig as baseTierConfig, sponsorsByTier } from '../data/sponsors'
 
 const tierConfig = {
@@ -159,16 +159,27 @@ export default function Sponsors() {
               Partner with CyberCats and support the next generation of STEM leaders. 
               Multiple sponsorship tiers available with various benefits and recognition levels.
             </p>
-            <motion.a
-              href="https://drive.google.com/file/d/17guj6mOxxli2tHUjPJAJOaMYC1b8rsBX/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-              className="inline-block px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
-            >
-              Sponsorship Opportunities
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="https://drive.google.com/file/d/17guj6mOxxli2tHUjPJAJOaMYC1b8rsBX/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                className="inline-block px-8 py-4 bg-red-500 text-black font-mono font-bold uppercase tracking-wider hover:bg-red-400 rounded-lg"
+              >
+                More Information
+              </motion.a>
+              <motion.a
+                href="/contact?inquiry=sponsorship"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                className="inline-flex items-center gap-2 px-8 py-4 border border-red-500 text-red-500 font-mono font-bold uppercase tracking-wider hover:bg-red-500 hover:text-black rounded-lg transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                Contact Us
+              </motion.a>
+            </div>
           </div>
         </motion.div>
 

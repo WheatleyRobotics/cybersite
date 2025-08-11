@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Github, Twitter, Instagram, Mail, MapPin, Phone, Youtube, Box } from 'lucide-react'
+import { Github, X, Instagram, Mail, MapPin, Phone, Youtube, Box } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -34,24 +34,6 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/cybercats2872"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
-                aria-label="Github"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://x.com/thecybercats?lang=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
-                aria-label="X (Twitter)"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
                 href="https://www.instagram.com/thewheatleycybercats/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,6 +50,24 @@ export default function Footer() {
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/thecybercats?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
+                aria-label="X"
+              >
+                <X className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com/cybercats2872"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-gray-800 hover:bg-red-500 text-white rounded-lg "
+                aria-label="Github"
+              >
+                <Github className="w-5 h-5" />
               </a>
               <a
                 href="https://cad.onshape.com/documents/90cc8aa637ad551e8b9d4212/w/98d02ecdaaa5b029e288b6f7/e/53a2cd1cc401759a04a91ae1"
@@ -165,12 +165,6 @@ export default function Footer() {
               © {currentYear} FRC Team 2872 CyberCats. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-red-500 ">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 ">
-                Terms of Service
-              </a>
               <div className="text-gray-500">
                 Built with ❤️ by CyberCats
               </div>

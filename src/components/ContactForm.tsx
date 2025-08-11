@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, User, MessageSquare, Building } from 'lucide-react'
 
@@ -10,14 +10,14 @@ interface FormData {
   organization: string
   subject: string
   message: string
-  inquiry: 'sponsorship' | 'outreach' | 'technical' | 'general'
+  inquiry: 'sponsorship' | 'outreach' | 'technical' | 'general' | ''
 }
 
 const inquiryTypes = [
+  { value: 'general', label: 'General Inquiry', icon: Mail },
   { value: 'sponsorship', label: 'Sponsorship Opportunities', icon: Building },
   { value: 'outreach', label: 'Community Outreach', icon: User },
-  { value: 'technical', label: 'Technical Collaboration', icon: MessageSquare },
-  { value: 'general', label: 'General Inquiry', icon: Mail }
+  { value: 'technical', label: 'Technical Collaboration', icon: MessageSquare }
 ]
 
 export default function ContactForm() {
@@ -27,8 +27,38 @@ export default function ContactForm() {
     organization: '',
     subject: '',
     message: '',
-    inquiry: 'general'
+    inquiry: ''
   })
+
+  // Check for URL parameters to pre-select inquiry type
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const inquiryParam = urlParams.get('inquiry')
+    
+    if (inquiryParam && ['general', 'sponsorship', 'outreach', 'technical'].includes(inquiryParam)) {
+      setFormData(prev => ({
+        ...prev,
+        inquiry: inquiryParam as FormData['inquiry']
+      }))
+    }
+
+    // Listen for inquiry type changes from other components
+    const handleInquiryTypeChange = (event: CustomEvent) => {
+      const inquiryType = event.detail
+      if (['general', 'sponsorship', 'outreach', 'technical'].includes(inquiryType)) {
+        setFormData(prev => ({
+          ...prev,
+          inquiry: inquiryType as FormData['inquiry']
+        }))
+      }
+    }
+
+    window.addEventListener('inquiryTypeChange', handleInquiryTypeChange as EventListener)
+    
+    return () => {
+      window.removeEventListener('inquiryTypeChange', handleInquiryTypeChange as EventListener)
+    }
+  }, [])
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -55,7 +85,7 @@ export default function ContactForm() {
         organization: '',
         subject: '',
         message: '',
-        inquiry: 'general'
+        inquiry: ''
       })
     } catch {
       setSubmitStatus('error')
@@ -160,7 +190,8 @@ export default function ContactForm() {
               
               {/* Inquiry Type */}
               <div>
-                <label className="block text-white font-bold font-mono mb-4">INQUIRY TYPE</label>
+                <label className="block text-white font-bold font-mono mb-2">INQUIRY TYPE</label>
+                <p className="text-gray-400 text-sm mb-4">Select the category that best describes your inquiry to help us route your message appropriately.</p>
                 <div className="grid grid-cols-2 gap-4">
                   {inquiryTypes.map((type) => (
                     <motion.label
@@ -186,6 +217,36 @@ export default function ContactForm() {
                   ))}
                 </div>
               </div>
+
+              {/* Show prompt when no inquiry type is selected */}
+              {!formData.inquiry && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-16 px-8 bg-gray-900/30 border border-gray-700 rounded-lg"
+                >
+                  <MessageSquare className="w-16 h-16 text-gray-500 mx-auto mb-6" />
+                  <h3 className="text-white font-bold font-mono text-xl mb-4">GET STARTED</h3>
+                  <p className="text-gray-400 text-lg mb-6">
+                    Choose an inquiry type above to continue with your message
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-500">
+                    <p>• <span className="text-red-400">Sponsorship</span> - Partnership opportunities and funding</p>
+                    <p>• <span className="text-blue-400">Technical</span> - Collaboration and project inquiries</p>
+                    <p>• <span className="text-green-400">Outreach</span> - Community events and presentations</p>
+                    <p>• <span className="text-gray-400">General</span> - Questions and other inquiries</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Show remaining form fields only after inquiry type is selected */}
+              {formData.inquiry && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-6"
+                >
 
               {/* Name and Email */}
               <div className="grid md:grid-cols-2 gap-6">
@@ -298,6 +359,9 @@ export default function ContactForm() {
                   )}
                 </motion.button>
               </div>
+              
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>

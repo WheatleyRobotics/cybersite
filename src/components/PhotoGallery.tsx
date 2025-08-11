@@ -10,8 +10,9 @@ interface Photo {
   src: string
   alt: string
   category: 'robot' | 'team'
-  title: string
-  description: string
+  location: string
+  photographer?: string
+  year?: string
 }
 
 const photos: Photo[] = [
@@ -21,48 +22,48 @@ const photos: Photo[] = [
     src: '/robot/robot_1.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'LI Regional',
+    photographer: 'Ace Shu'
   },
   {
     id: 'robot_002',
     src: '/robot/robot_2.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'LI Regional',
+    photographer: 'Ace Shu'
   },
   {
     id: 'robot_003',
     src: '/robot/robot_3.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'SF Regional',
+    photographer: 'Tyron Mai'
   },
   {
     id: 'robot_004',
     src: '/robot/robot_4.JPG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'SF Regional',
+    photographer: 'Tyron Mai'
   },
   {
     id: 'robot_005',
     src: '/robot/robot_5.jpeg',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'Practice Field',
+    photographer: 'Brandon Jiang'
   },
   {
     id: 'robot_006',
     src: '/robot/robot_6.PNG',
     alt: 'CyberCats Robot Photo',
     category: 'robot',
-    title: '',
-    description: ''
+    location: 'LI Regional',
+    photographer: 'Ace Shu'
   },
   
   // Team Photos (6)
@@ -71,48 +72,48 @@ const photos: Photo[] = [
     src: '/team/team_1.JPG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'LI Regional',
+    year: '2025'
   },
   {
     id: 'team_002',
     src: '/team/team_2.PNG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'WPI BattleCry',
+    year: '2024'
   },
   {
     id: 'team_003',
     src: '/team/team_3.jpeg',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'Jones Beach',
+    year: '2024'
   },
   {
     id: 'team_004',
     src: '/team/team_4.png',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'South Florida',
+    year: '2025'
   },
   {
     id: 'team_005',
     src: '/team/team_5.png',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'Build Season',
+    year: '2025'
   },
   {
     id: 'team_006',
     src: '/team/team_6.PNG',
     alt: 'CyberCats Team Photo',
     category: 'team',
-    title: '',
-    description: ''
+    location: 'LI Regional',
+    year: '2025'
   }
 ]
 
@@ -222,14 +223,20 @@ export default function PhotoGallery() {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-end">
                     <div className="p-6 text-white">
-                      <h3 className="font-bold text-lg mb-2 font-mono">{photo.title}</h3>
-                      <p className="text-gray-300 text-sm">{photo.description}</p>
+                      <h3 className="font-bold text-lg font-mono">
+                        @{photo.location} - {photo.category === 'robot' ? photo.photographer : photo.year}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-red-500/90 text-black px-3 py-1 rounded-full text-xs font-mono font-bold uppercase">
-                    {photo.category}
+                  {/* Location and Photographer/Year Info */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-2 rounded-lg">
+                    <div className="text-xs font-mono">
+                      <div className="text-red-400">@{photo.location}</div>
+                      <div className="text-gray-300">
+                        {photo.category === 'robot' ? photo.photographer : photo.year}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -309,8 +316,9 @@ export default function PhotoGallery() {
 
               {/* Photo Info */}
               <div className="text-center text-white">
-                <h3 className="text-2xl font-bold font-mono mb-2">{selectedPhoto.title}</h3>
-                <p className="text-gray-400 max-w-2xl mx-auto">{selectedPhoto.description}</p>
+                <h3 className="text-2xl font-bold font-mono mb-2">
+                  @{selectedPhoto.location} - {selectedPhoto.category === 'robot' ? selectedPhoto.photographer : selectedPhoto.year}
+                </h3>
                 
                 {/* Photo Counter */}
                 <div className="mt-4 text-gray-500 font-mono text-sm">
