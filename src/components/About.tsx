@@ -137,8 +137,8 @@ export default function About() {
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 border border-green-500/30 rounded-full mb-4">
-                <Users className="w-8 h-8 text-green-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-500/20 border border-pink-500/30 rounded-full mb-4">
+                <Users className="w-8 h-8 text-pink-500" />
               </div>
               <h4 className="text-white font-semibold mb-2">Outreach</h4>
               <p className="text-gray-400 text-sm">Community engagement and STEM promotion</p>

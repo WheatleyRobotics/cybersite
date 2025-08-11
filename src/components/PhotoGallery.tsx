@@ -207,7 +207,13 @@ export default function PhotoGallery() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-lg bg-gray-800 cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -5,
+                    boxShadow: "0 20px 40px rgba(239, 68, 68, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative overflow-hidden rounded-lg bg-gray-800 cursor-pointer transition-all duration-300 hover:ring-2 hover:ring-red-500/50"
                   onClick={() => openLightbox(photo)}
                 >
                   <div className="relative aspect-video overflow-hidden">
@@ -215,25 +221,17 @@ export default function PhotoGallery() {
                       src={photo.src}
                       alt={photo.alt}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-end">
-                    <div className="p-6 text-white">
-                      <h3 className="font-bold text-lg font-mono">
-                        @{photo.location} - {photo.category === 'robot' ? photo.photographer : photo.year}
-                      </h3>
-                    </div>
-                  </div>
 
                   {/* Location and Photographer/Year Info */}
-                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-2 rounded-lg">
+                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-2 rounded-lg transition-all duration-300 group-hover:bg-red-500/80 group-hover:scale-105">
                     <div className="text-xs font-mono">
-                      <div className="text-red-400">@{photo.location}</div>
-                      <div className="text-gray-300">
+                      <div className="text-red-400 group-hover:text-white transition-colors duration-300">@{photo.location}</div>
+                      <div className="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">
                         {photo.category === 'robot' ? photo.photographer : photo.year}
                       </div>
                     </div>

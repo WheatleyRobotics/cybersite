@@ -133,7 +133,7 @@ const teamMembers: TeamMember[] = [
     subteam: 'mechanical',
     experience: '1 year', 
     type: 'member',
-    grade: 9
+    grade: 10
   },
   {
     name: 'Christiano Tortorello',
@@ -207,7 +207,7 @@ const subteamConfig = {
     icon: Users,
     color: 'text-green-500',
     bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/30'
+    borderColor: 'border-[#F79AC0]/30'
   },
   media: {
     icon: Camera,
@@ -227,7 +227,7 @@ const getPhotoPath = (name: string) => {
     if (lastName === 'jiang') return '/roster/jiang.png'
     if (lastName === 'connell') return '/roster/connell.png'
     if (lastName === 'cheng') return '/roster/cheng.png'
-    if (lastName === 'deng') return '/roster/deng.jpeg'
+    if (lastName === 'deng') return '/roster/deng.png'
     if (lastName === 'khillian') return '/roster/khillian.png'
   }
   
