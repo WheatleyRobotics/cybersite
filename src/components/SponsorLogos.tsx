@@ -39,7 +39,7 @@ export default function SponsorLogos() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          className="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto"
         >
           {sponsors.map((sponsor, index) => (
             <motion.div
@@ -47,7 +47,7 @@ export default function SponsorLogos() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`group relative aspect-square rounded-lg border ${tierColors[sponsor.tier as keyof typeof tierColors]} p-4 hover:bg-opacity-80 flex flex-col items-center justify-center text-center`}
+              className={`group relative w-32 h-32 rounded-lg border ${tierColors[sponsor.tier as keyof typeof tierColors]} p-4 hover:bg-opacity-80 flex flex-col items-center justify-center text-center`}
             >
               {/* Logo placeholder */}
               <Building2 className="w-8 h-8 mb-2 opacity-60 group-hover:opacity-100" />

@@ -289,11 +289,26 @@ export default function TeamRoster() {
                 key={member.name}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/30 rounded-lg p-6 hover:bg-yellow-500/10 hover:shadow-2xl"
+                whileHover={{ 
+                  scale: 1.02,
+                  rotateY: 1
+                }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: index * 0.05,
+                  ease: "easeOut"
+                }}
+                className="group relative bg-gradient-to-b from-gray-900/80 to-black/80 border border-yellow-500/30 rounded-lg p-6 hover:bg-gradient-to-b hover:from-yellow-500/15 hover:to-yellow-500/5 hover:border-yellow-400/70 transform-gpu"
               >
                 {/* Mentor Picture */}
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-yellow-500/30 overflow-hidden">
+                <motion.div 
+                  className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-yellow-500/30 overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    rotate: 3
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
                   {getPhotoPath(member.name) ? (
                     <img 
                       src={getPhotoPath(member.name)!} 
@@ -307,7 +322,7 @@ export default function TeamRoster() {
                       </div>
                     </div>
                   )}
-                </div>
+                </motion.div>
 
                 {/* Mentor Info */}
                 <div className="text-center">
@@ -347,11 +362,26 @@ export default function TeamRoster() {
                   key={member.name}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:${config.bgColor} hover:shadow-2xl`}
+                  whileHover={{ 
+                    scale: 1.02,
+                    y: -2
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    delay: index * 0.05,
+                    ease: "easeOut"
+                  }}
+                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-6 hover:border-opacity-90 transform-gpu`}
                 >
                   {/* Profile Picture */}
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-gray-600 overflow-hidden">
+                  <motion.div 
+                    className="w-20 h-20 mx-auto mb-4 rounded-full bg-gray-700 border-2 border-gray-600 overflow-hidden"
+                    whileHover={{ 
+                      scale: 1.05,
+                      borderColor: "rgb(239, 68, 68)"
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
                     {getPhotoPath(member.name) ? (
                       <img 
                         src={getPhotoPath(member.name)!} 
@@ -365,11 +395,11 @@ export default function TeamRoster() {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </motion.div>
 
                   {/* Member Info */}
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-1 font-mono group-hover:text-red-500 h-12 flex items-center justify-center">
+                    <h4 className="text-white font-bold text-lg mb-1 font-mono h-12 flex items-center justify-center group-hover:text-red-500">
                       {member.name}
                     </h4>
                     
@@ -403,13 +433,33 @@ export default function TeamRoster() {
                   key={member.name}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-3 hover:${config.bgColor} hover:shadow-lg`}
+                  whileHover={{ 
+                    scale: 1.03,
+                    y: -2
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    delay: index * 0.05,
+                    ease: "easeOut"
+                  }}
+                  className={`group relative bg-gradient-to-b from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-3 hover:border-opacity-90 transform-gpu`}
                 >
                   {/* Subteam Icon */}
-                  <div className={`w-12 h-12 mx-auto mb-2 rounded-full ${config.bgColor} border-2 ${config.borderColor} flex items-center justify-center`}>
-                    <config.icon className={`w-4 h-4 ${config.color}`} />
-                  </div>
+                  <motion.div 
+                    className={`w-12 h-12 mx-auto mb-2 rounded-full ${config.bgColor} border-2 ${config.borderColor} flex items-center justify-center`}
+                    whileHover={{ 
+                      scale: 1.05, 
+                      rotate: 15
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <motion.div
+                      whileHover={{ rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <config.icon className={`w-4 h-4 ${config.color}`} />
+                    </motion.div>
+                  </motion.div>
 
                   {/* Member Info */}
                   <div className="text-center">
@@ -463,13 +513,33 @@ export default function TeamRoster() {
                       key={member.name}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className={`flex items-center gap-3 bg-gradient-to-r from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-4 hover:${config.bgColor} hover:shadow-lg transition-all`}
+                      whileHover={{ 
+                        scale: 1.01,
+                        x: 3,
+                        borderColor: "rgba(156, 163, 175, 0.6)"
+                      }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: index * 0.05
+                      }}
+                      className={`flex items-center gap-3 bg-gradient-to-r from-gray-900/80 to-black/80 border ${config.borderColor} rounded-lg p-4 cursor-pointer transform-gpu`}
                     >
                       {/* Subteam Icon */}
-                      <div className={`w-10 h-10 rounded-full ${config.bgColor} border-2 ${config.borderColor} flex items-center justify-center flex-shrink-0`}>
-                        <config.icon className={`w-4 h-4 ${config.color}`} />
-                      </div>
+                      <motion.div 
+                        className={`w-10 h-10 rounded-full ${config.bgColor} border-2 ${config.borderColor} flex items-center justify-center flex-shrink-0`}
+                        whileHover={{ 
+                          scale: 1.05,
+                          rotate: 90
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <motion.div
+                          whileHover={{ rotate: 3 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <config.icon className={`w-4 h-4 ${config.color}`} />
+                        </motion.div>
+                      </motion.div>
 
                       {/* Member Info */}
                       <div className="flex-1 min-w-0">
