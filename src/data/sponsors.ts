@@ -19,22 +19,22 @@ export const sponsors: Sponsor[] = [
     sponsorType: 'Corporate Sponsor'
   },
   {
-    name: 'ORICS Industries',
+    name: 'The Wheatley School',
     tier: 'diamond',
+    website: 'https://www.ewsdonline.org',
+    contribution: 'Facilities & Funding',
+    description: 'Provides workshop space, funding, meeting rooms, and transportation to competitions. Home base for team operations and storage.',
+    since: 2009,
+    sponsorType: 'Partner'
+  },
+  {
+    name: 'ORICS Industries',
+    tier: 'gold',
     website: 'https://oricsindustries.com',
     contribution: 'Manufacturing & Materials',
     description: 'Supplies precision-machined components, raw materials, and access to advanced manufacturing equipment including CNC machines.',
     since: 2020,
     sponsorType: 'Corporate Sponsor'
-  },
-  {
-    name: 'The Wheatley School',
-    tier: 'gold',
-    website: 'https://www.ewsdonline.org',
-    contribution: 'Facilities & Transportation',
-    description: 'Provides workshop space, tools, meeting rooms, and transportation to competitions. Home base for team operations and storage.',
-    since: 2009,
-    sponsorType: 'Partner'
   },
   {
     name: 'Cell Mechanics',

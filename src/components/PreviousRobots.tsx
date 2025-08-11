@@ -88,7 +88,7 @@ const previousRobots: Robot[] = [
     game: 'RAPID REACT',
     description: 'Championship-winning robot with exceptional ball handling and climbing mechanisms.',
     achievements: ['Regional Champions', 'Innovation in Control Award'],
-    keyFeatures: ['Turret Shooter', 'Rapid Intake', 'Traversal Climb', 'Auto Targeting'],
+    keyFeatures: ['Dual Flywheel Shooter', 'Rapid Intake', 'Ball Rejection', 'Auto Targeting'],
     sponsors: [
       { name: 'NASA', tier: 'diamond' },
       { name: 'Wheatley School', tier: 'gold' },
