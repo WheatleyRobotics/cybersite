@@ -24,7 +24,7 @@ const events: Event[] = [
     id: '1',
     name: 'Long Island Maker Faire',
     type: 'outreach',
-    date: new Date('2025-09-14'),
+    date: new Date(2025, 8, 14), // Month is 0-indexed, so 8 = September
     location: 'Stony Brook, NY',
     venue: 'Stony Brook University',
     status: 'upcoming',
@@ -35,18 +35,18 @@ const events: Event[] = [
     id: '2',
     name: 'Season Kick Off',
     type: 'meeting',
-    date: new Date('2026-01-10'),
+    date: new Date(2026, 0, 10), // Month is 0-indexed, so 0 = January
     location: 'East Williston, NY',
     venue: 'The Wheatley School',
     status: 'upcoming',
-    description: 'Official start of our 2025 robotics season with team preparation and planning.',
+    description: 'Official start of our 2026 robotics season with team preparation and planning.',
     teamCount: 30
   },
   {
     id: '3',
     name: 'Bryant Library Presentation & Demo',
     type: 'outreach',
-    date: new Date('2025-08-16'),
+    date: new Date(2025, 7, 16), // Month is 0-indexed, so 7 = August
     location: 'Roslyn, NY',
     venue: 'Bryant Library',
     status: 'upcoming',
