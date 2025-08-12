@@ -53,10 +53,10 @@ const teamMembers: TeamMember[] = [
   
   // Regular Team Members
   {
-    name: 'Ronald Kahut',
+    name: 'Ronald Kohut',
     role: 'Member',
     subteam: 'mechanical',
-    experience: '2 years',
+    experience: '3 years',
     type: 'member'
   },
   {
@@ -98,7 +98,7 @@ const teamMembers: TeamMember[] = [
     name: 'Matthew Caputo',
     role: 'Member',
     subteam: 'mechanical',
-    experience: '3 year',
+    experience: '2 year',
     type: 'member'
   },
   

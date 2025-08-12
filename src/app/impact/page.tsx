@@ -93,7 +93,7 @@ export default function ImpactPage() {
             <div className="mb-12">
               <div className="relative max-w-4xl mx-auto">
                 <Image
-                  src="/impact/events/dosl.jpeg"
+                  src="/impact/events/dosl.png"
                   alt="CyberCats team beach cleanup volunteer work on Long Island shores"
                   width={1000}
                   height={500}
