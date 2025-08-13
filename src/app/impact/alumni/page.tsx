@@ -25,7 +25,7 @@ export default function AlumniImpactPage() {
                 Alumni Success
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Our alumni continue to make lasting impacts in STEM fields worldwide, while remaining dedicated mentors and supporters of the CyberCats program.
+                Our alumni continue to make lasting impacts in STEM fields worldwide, while remaining dedicated mentors and supporters of our program.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function AlumniImpactPage() {
                 100% STEM Career Success
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Over the last 3 years, 100% of our alumni have pursued STEM careers, demonstrating the lasting impact of their robotics experience and the strong foundation they built as CyberCats.
+                Over the last 3 years, 100% of our alumni have pursued STEM careers, demonstrating the lasting impact of their robotics experience and the strong foundation they built with us.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export default function AlumniImpactPage() {
                 <div className="bg-black/50 border border-red-500/20 p-8 rounded-lg">
                   <h3 className="text-2xl font-bold text-white mb-6">Event Participation</h3>
                   <p className="text-gray-300 text-lg">
-                    We&apos;ve proudly inspired hundreds of students and invite our alumni to return to FRC regionals and events as spectators and as mentors of our team. Their presence serves as inspiration for current members and demonstrates the lasting bonds formed through robotics.
+                    We&apos;ve proudly inspired hundreds of students and invite our alumni to return to FRC regionals and events as spectators and as mentors. Their presence serves as inspiration for current members and demonstrates the lasting bonds formed through robotics.
                   </p>
                 </div>
               </div>
@@ -167,13 +167,13 @@ export default function AlumniImpactPage() {
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">Alumni-Founded Company</h3>
                 <p className="text-gray-300 text-lg mb-6">
-                  For the past 15 years, two of our alumni members have manufactured parts for our robot through Orics, an East Williston alumni-run company. This partnership demonstrates the long-term commitment our graduates have to supporting the next generation of CyberCats.
+                  For the past 15 years, two of our alumni members have manufactured parts for our robot through Orics, an East Williston alumni-run company. This partnership demonstrates the long-term commitment our graduates have to supporting the next generation of our team.
                 </p>
                 <p className="text-gray-300 text-lg mb-6">
-                  Parts of our robot and game piece elements are donated to us every year by Orics, providing professional-grade manufacturing support that gives our team a competitive edge while teaching current students about industry-standard practices.
+                  Parts of our robot and game piece elements are donated to us every year by Orics, providing professional-grade manufacturing support that gives us a competitive edge while teaching current students about industry-standard practices.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  This partnership serves as an inspiring example of how CyberCats alumni continue to have an everlasting impact on our team and the FIRST community, even years after graduation.
+                  This partnership serves as an inspiring example of how our alumni continue to have an everlasting impact on our team and the FIRST community, even years after graduation.
                 </p>
               </div>
 
@@ -234,7 +234,7 @@ export default function AlumniImpactPage() {
                   Others give us access to customized parts and specialized equipment, leveraging their professional networks and resources to benefit the team. This support often includes access to advanced manufacturing capabilities and industry-standard tools.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  These contributions help level the playing field, allowing our small team to compete with much larger, better-funded programs through the generosity of our alumni network.
+                  These contributions help level the playing field, allowing us to compete with much larger, better-funded programs through the generosity of our alumni network.
                 </p>
               </div>
             </div>
@@ -306,7 +306,7 @@ export default function AlumniImpactPage() {
                   Through their continued involvement, alumni help us maintain our high standards and ambitious goals despite being a small team. Their professional expertise allows us to tackle complex technical challenges and compete effectively against much larger programs.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  The alumni network has become an integral part of the CyberCats identity, proving that once a CyberCat, always a CyberCat.
+                  Our alumni network has become an integral part of our identity, proving that once a CyberCat, always a CyberCat.
                 </p>
               </div>
             </div>
@@ -323,7 +323,7 @@ export default function AlumniImpactPage() {
               Our alumni success stories are not just individual achievements - they represent the power of the CyberCats program to transform lives and create lasting positive impact in the world. Each graduate carries forward the values of innovation, teamwork, and service that define our team culture.
             </p>
             <p className="text-xl text-gray-300 leading-relaxed">
-              As our alumni continue to excel in their careers and give back to the program, they ensure that the CyberCats legacy will continue to inspire and support future generations of STEM leaders, entrepreneurs, and innovators.
+              As our alumni continue to excel in their careers and give back to our program, they ensure that our legacy will continue to inspire and support future generations of STEM leaders, entrepreneurs, and innovators.
             </p>
           </div>
         </section>

@@ -56,10 +56,10 @@ export default function EventsImpactPage() {
                     />
                   </div>
                   <p className="text-gray-300 text-lg mb-6">
-                    During our annual district Technology and Coding Night, we showcased our robot to over 300 students from kindergarten through 12th grade. Students in our community got to experience driving the robot firsthand, sparking their initial interest in STEM and robotics.
+                    During our annual district Technology and Coding Night, we showcase our robot to over 300 students from kindergarten through 12th grade. Students in our community get to experience driving the robot firsthand, sparking their initial interest in STEM and robotics.
                   </p>
                   <p className="text-gray-300 text-lg mb-6">
-                    Technology and Coding Night is one of many annual events that Team 2872 utilizes to attract future CyberCats. The interactive nature of the event allows young students to see technology in action and imagine themselves as future engineers and programmers.
+                    Technology and Coding Night is one of many annual events that we utilize to attract future members. The interactive nature of the event allows young students to see technology in action and imagine themselves as future engineers and programmers.
                   </p>
                   <p className="text-gray-300 text-lg">
                     Over the past three years, these experiences have garnered interest in STEM among young students, increasing membership on our FRC, FTC, and FLL teams.
@@ -110,7 +110,7 @@ export default function EventsImpactPage() {
                   />
                 </div>
                 <p className="text-gray-300 text-lg mb-6">
-                  Our participation in the school&apos;s STEAM fair provides another opportunity to showcase robotics and engineering to younger students. We set up interactive demonstrations where attendees can learn about robot mechanisms, programming concepts, and engineering design.
+                  Our participation in the school&apos;s STEAM fair provides another opportunity for us to showcase robotics and engineering to younger students. We set up interactive demonstrations where attendees can learn about robot mechanisms, programming concepts, and engineering design.
                 </p>
                 <p className="text-gray-300 text-lg mb-6">
                   The fair format allows us to engage with students who might not otherwise be exposed to robotics, expanding our reach beyond just technology-focused events.
@@ -238,7 +238,7 @@ export default function EventsImpactPage() {
                   On our Saturday meetings, we host a group lunch where a parent volunteers to bring in food for our team. This not only allows us to take a break from all the hard work we have been doing during the build season but it also gives us the opportunity to spend time together as a team.
                 </p>
                 <p className="text-gray-300 text-lg">
-                  Through this, we have formed closer bonds with one another and our mentors. We have created long lasting friendships with each other. The 2872 Cybercats are not just a team, we are a family.
+                  Through this, we have formed closer bonds with one another and our mentors. We have created long lasting friendships with each other. We are not just a team, we are a family.
                 </p>
               </div>
 
@@ -276,7 +276,7 @@ export default function EventsImpactPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
               </div>
               <p className="text-gray-300 text-lg mt-6">
-                Our team participates in Long Island robotics meetups, building connections with other teams and sharing knowledge across the robotics community.
+                We participate in Long Island robotics meetups, building connections with other teams and sharing knowledge across the robotics community.
               </p>
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function EventsImpactPage() {
               As we continue to grow our event programming, we remain committed to making STEM education accessible and exciting for students of all ages. Our events serve as entry points into the world of robotics and engineering, showing young people that they too can be innovators and problem-solvers.
             </p>
             <p className="text-xl text-gray-300 leading-relaxed">
-              The effect of these initiatives has been evident through the increased interest in technology and attendance throughout the season that we have observed. Each event plants seeds that grow into the next generation of CyberCats and STEM leaders.
+              The effect of these initiatives has been evident through the increased interest in technology and attendance throughout the season that we have observed. Each event plants seeds that grow into the next generation of team members and STEM leaders.
             </p>
           </div>
         </section>

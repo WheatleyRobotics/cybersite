@@ -25,7 +25,7 @@ export default function FirstImpactPage() {
                 FIRST Programs
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Since our team&apos;s inception in 2009, we have prioritized spreading FIRST&apos;s message to the rest of the world through mentorship, education, and community engagement.
+                Since our inception in 2009, we have prioritized spreading FIRST&apos;s message to the rest of the world through mentorship, education, and community engagement.
               </p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function FirstImpactPage() {
                   Our Beginning
                 </h2>
                 <p className="text-gray-300 text-lg mb-6">
-                  The team initially began as a senior seminar program to allow students to apply their knowledge of STEM in a creative and engaging way. In 2016, the program became a club, opening the door for younger members to participate in the FIRST Robotics Competition.
+                  We initially began as a senior seminar program to allow students to apply their knowledge of STEM in a creative and engaging way. In 2016, we became a club, opening the door for younger members to participate in the FIRST Robotics Competition.
                 </p>
                 <p className="text-gray-300 text-lg">
                   This transformation marked the beginning of our commitment to making FIRST accessible to students of all grade levels and backgrounds.
@@ -77,7 +77,7 @@ export default function FirstImpactPage() {
                     <h3 className="text-2xl font-bold text-white">Team 27919 Mentorship</h3>
                   </div>
                   <p className="text-gray-300 text-lg mb-6">
-                    We began our FIRST Lego League team, team 27919, in 2016. The CyberCats travel to tournaments with team 27919 to support them during their qualifiers. To increase engagement, our team visits the middle school weekly to share our thoughts and insights.
+                    We began our FIRST Lego League team, team 27919, in 2016. We travel to tournaments with team 27919 to support them during their qualifiers. To increase engagement, we visit the middle school weekly to share our thoughts and insights.
                   </p>
                   <p className="text-gray-300 text-lg">
                     We help with their build, code, and innovation project every year, ensuring they have the support needed to succeed in competition and beyond.
@@ -90,7 +90,7 @@ export default function FirstImpactPage() {
                     <h3 className="text-2xl font-bold text-white">FLL Team Day</h3>
                   </div>
                   <p className="text-gray-300 text-lg mb-6">
-                    On November 9th, 2024, the CyberCats hosted a FIRST Lego League Team Day, both a mentor coaching session and a team bonding day for their students. New coaches were trained to coach a robotics team while their students participated in activities guided by our CyberCats.
+                    On November 9th, 2024, we hosted a FIRST Lego League Team Day, both a mentor coaching session and a team bonding day for their students. New coaches were trained to coach a robotics team while their students participated in activities guided by us.
                   </p>
                   <p className="text-gray-300 text-lg">
                     We had 15+ attendees at the event. This is the first time anyone has hosted a training event incorporating mentors and students, showing future FRC students how STEM can be integrated into their everyday lives.
@@ -145,7 +145,7 @@ export default function FirstImpactPage() {
                   />
                 </div>
                 <p className="text-gray-300 text-lg mb-6">
-                  To popularize the FIRST program, the CyberCats advocated to start a Robotics class at The Wheatley School in 2024. In its inaugural year, it attracted 15 students who put in immense amounts of effort to participate in the FIRST Tech Challenge.
+                  To popularize the FIRST program, we advocated to start a Robotics class at The Wheatley School in 2024. In its inaugural year, it attracted 15 students who put in immense amounts of effort to participate in the FIRST Tech Challenge.
                 </p>
                 <p className="text-gray-300 text-lg mb-6">
                   While many of our team members are committed to spending over 20 hours a week building a robot after school, not everyone can do so. Therefore, the Robotics class provides students with the opportunity to experience engineering, mechanics, and computer science all through the FIRST Robotics lens.
@@ -198,7 +198,7 @@ export default function FirstImpactPage() {
                   <h3 className="text-2xl font-bold text-white">Merit Badge Program</h3>
                 </div>
                 <p className="text-gray-300 text-lg mb-4">
-                  Outside of working with other teams, we&apos;ve had the honor of working with Scout troops to help them gain their robotics merit badge. Our team provides hands-on demonstrations and interactive learning experiences.
+                  Outside of working with other teams, we&apos;ve had the honor of working with Scout troops to help them gain their robotics merit badge. We provide hands-on demonstrations and interactive learning experiences.
                 </p>
               </div>
             </div>
@@ -219,12 +219,12 @@ export default function FirstImpactPage() {
                   alt="CyberCats team members presenting at FIRST robotics competition event"
                   width={800}
                   height={600}
-                  className="rounded-lg shadow-lg border border-red-500/20"
+                  className="rounded-lg shadow-lg border border-red-500/20 mx-auto block"
                   unoptimized
                 />
               </div>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                For the past 3 years, our team has worked on spreading the values of FIRST to the world by being active on our social media platforms. We consistently post content showing the progress of our season while displaying engaging content to catch the attention of all viewers.
+                For the past 3 years, we have worked on spreading the values of FIRST to the world by being active on our social media platforms. We consistently post content showing the progress of our season while displaying engaging content to catch the attention of all viewers.
               </p>
             </div>
 

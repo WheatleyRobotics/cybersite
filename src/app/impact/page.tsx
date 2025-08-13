@@ -20,7 +20,7 @@ export default function ImpactPage() {
                 OUR IMPACT
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                People often wonder how a small team accomplishes so much. The Wheatley CyberCats work diligently with the resources we have to overcome every obstacle that comes our way.
+                People often wonder how a small team accomplishes so much. We work diligently with the resources we have to overcome every obstacle that comes our way.
               </p>
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function ImpactPage() {
                   Rising From Adversity
                 </h2>
                 <p className="text-gray-300 text-lg mb-6">
-                  The pandemic deeply affected our team, causing its membership to drop to just six members. Since then, we have rebuilt our team to over 30 active members. It&apos;s truly incredible to see how our numbers have tripled since our rookie year in 2009.
+                  The pandemic deeply affected our team, causing our membership to drop to just six members. Since then, we have rebuilt our team to over 30 active members. It&apos;s truly incredible to see how our numbers have tripled since our rookie year in 2009.
                 </p>
                 <p className="text-gray-300 text-lg">
                   Together, we strive to expand and fund our team, as well as inspire the world around us.
@@ -86,7 +86,7 @@ export default function ImpactPage() {
                 Community Impact
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Within the last three years, members of the CyberCats have dedicated over 3000 hours to volunteering in our local communities and around the world.
+                Within the last three years, we have dedicated over 3000 hours to volunteering in our local communities and around the world.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ export default function ImpactPage() {
                     Community Events
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Explore our school-hosted events like Tech and Code Night, STEAM fair, and other community outreach programs that inspire future engineers.
+                    Explore our school-hosted events like Tech and Code Night, STEAM fair, and other community outreach programs that we organize to inspire future engineers.
                   </p>
                   <div className="flex items-center text-red-500 group-hover:text-red-400 transition-colors">
                     <span className="font-mono text-sm">LEARN MORE</span>
@@ -207,7 +207,7 @@ export default function ImpactPage() {
               More Than Just a Team
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              The CyberCats have proven that dedication, perseverance, and teamwork can overcome any challenge. As we continue to push the boundaries of what a small team can achieve, we remain driven by our passion for robotics, volunteer work, and inspiring others. We are more than just a team— we are a family striving to inspire future generations to leave a lasting legacy in the world.
+              We have proven that dedication, perseverance, and teamwork can overcome any challenge. As we continue to push the boundaries of what a small team can achieve, we remain driven by our passion for robotics, volunteer work, and inspiring others. We are more than just a team— we are a family striving to inspire future generations to leave a lasting legacy in the world.
             </p>
           </div>
         </section>

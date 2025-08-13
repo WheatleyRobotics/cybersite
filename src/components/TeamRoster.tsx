@@ -399,13 +399,13 @@ export default function TeamRoster() {
 
                   {/* Member Info */}
                   <div className="text-center">
-                    <h4 className="text-white font-bold text-lg mb-1 font-mono h-12 flex items-center justify-center group-hover:text-red-500">
-                      {member.name}
+                    <h4 className="text-white font-bold text-lg mb-1 font-mono h-12 flex items-center justify-center group-hover:text-red-500 break-words overflow-hidden">
+                      <span className="truncate px-2">{member.name}</span>
                     </h4>
                     
                     <div className="text-gray-400 text-sm mb-4">
-                      <div className="font-mono uppercase tracking-wider mb-1">{member.subteam}</div>
-                      <div className="text-xs">{member.experience} experience</div>
+                      <div className="font-mono uppercase tracking-wider mb-1 truncate">{member.subteam}</div>
+                      <div className="text-xs truncate">{member.experience} experience</div>
                     </div>
 
                   </div>
@@ -462,14 +462,14 @@ export default function TeamRoster() {
                   </motion.div>
 
                   {/* Member Info */}
-                  <div className="text-center">
-                    <h4 className="text-white font-bold text-xs mb-1 font-mono group-hover:text-gray-300">
+                  <div className="text-center min-w-0">
+                    <h4 className="text-white font-bold text-xs mb-1 font-mono group-hover:text-gray-300 truncate px-1">
                       {member.name}
                     </h4>
                     
                     <div className="text-gray-400 text-xs mb-1">
-                      <div className="font-mono uppercase tracking-wider mb-1 text-xs">{member.subteam}</div>
-                      <div className="text-xs">{member.experience}</div>
+                      <div className="font-mono uppercase tracking-wider mb-1 text-xs truncate">{member.subteam}</div>
+                      <div className="text-xs truncate">{member.experience}</div>
                     </div>
                   </div>
 
@@ -546,7 +546,7 @@ export default function TeamRoster() {
                         <h5 className="text-white font-bold font-mono text-sm truncate">
                           {member.name}
                         </h5>
-                        <div className="text-gray-400 text-xs">
+                        <div className="text-gray-400 text-xs truncate">
                           <span className="font-mono uppercase tracking-wider">{member.subteam}</span>
                           <span className="text-gray-500 mx-1">•</span>
                           <span className="text-gray-400">Grade {member.grade}</span>
